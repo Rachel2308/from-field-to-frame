@@ -1,0 +1,65 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url("/media/iristower.png") no-repeat center center;
+    background-size: 50%;
+    margin-left: 200px;
+    height: calc(100vh - 200px);
+    color: #555;
+    font-family: 'Lato';
+    
+}
+
+/* body { 
+    background-color: #fffaf0;
+    font-family: 'Lato', sans-serif;
+} */
+
+.title-text { 
+    font-family: 'Niconne', cursive;
+}
+
+/* Header CSS*/
+
+header { 
+    background-color: 	#567d46;
+}
+
+.main-logo-link {
+    width: fit-content;
+    
+}
+
+a {
+    color: #080808 !important;
+}
+
+.banana {
+    background-color: #567d46;
+    margin-top: -5px;
+    width: 50px;
+}
+
+/* footer */
+
+footer {
+    background-color: #567d46;
+    height: 50px;
+}
+
+.social-footer-links {
+    margin-top: 50px;
+}
+
+.footer-links {
+    margin-top: 50px;
+}
+
+/* Home Page CSS */
+
+.home-page-content {
+    margin-top: 200px;
+    text-align: justify;
+}
