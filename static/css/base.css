@@ -3,19 +3,16 @@ html {
 }
 
 body {
-    background: url("/media/iristower.png") no-repeat center center;
-    background-size: 50%;
-    margin-left: 200px;
-    height: calc(100vh - 200px);
+    
     color: #555;
     font-family: 'Lato';
     
 }
 
-/* body { 
+body { 
     background-color: #fffaf0;
     font-family: 'Lato', sans-serif;
-} */
+}
 
 .title-text { 
     font-family: 'Niconne', cursive;
@@ -62,4 +59,9 @@ footer {
 .home-page-content {
     margin-top: 200px;
     text-align: justify;
+}
+
+.main-image {
+    max-width: 100%;
+    height: auto;
 }
