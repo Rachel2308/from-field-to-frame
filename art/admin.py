@@ -8,7 +8,7 @@ class ArtAdmin(admin.ModelAdmin):
         'title',
         'description',
         'medium',
-        'type',
+        'product_type',
         'price',
         'image',
 
