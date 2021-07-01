@@ -12,10 +12,19 @@ body {
 body { 
     background-color: #fffaf0;
     font-family: 'Lato', sans-serif;
+    padding-bottom: 100px;
 }
 
 .title-text { 
     font-family: 'Niconne', cursive;
+}
+
+.page-title {
+    margin-top: 100px;
+}
+
+hr {
+    border-top: 3px double #567d46;
 }
 
 /* Header CSS*/
@@ -64,4 +73,22 @@ footer {
 .main-image {
     max-width: 100%;
     height: auto;
+}
+
+/* Art page CSS */
+
+.art-card {
+    border-style: solid;
+    border-color: #567d46;
+    border-width: 2px; 
+   
+}
+
+.card {
+    margin-bottom: 50px;
+}
+
+.card-text {
+    vertical-align: bottom;
+    display: table-cell;
 }
