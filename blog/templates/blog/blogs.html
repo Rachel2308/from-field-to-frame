@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="title-text page-title">Our Blogs</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+
+
+{% for blog in blog %}
+
+<a href="#"><h2>{{ blog.title }}</h2></a>
+<h5>{{ blog.date|date:'j M Y' }}</h5>
+<p>{{ blog.description|striptags|truncatechars:100 }}</p>
+
+
+
+{% endfor %}
+{% endblock %}
