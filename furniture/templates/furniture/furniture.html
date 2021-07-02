@@ -23,8 +23,8 @@
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
-                {% for art in art %}
-                    <div class="col-sm-12 col-lg-6">
+                {% for furniture in furniture %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card art-card h-100">
                             {% if furniture.image %}
                                 <a href="">
@@ -41,7 +41,8 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">£{{ art.price }}</p>
+                                            <a href="#">More Info</a>
+                                            <a href="#">Contact Us</a>
                                             
                                         </div>
                                     </div>
