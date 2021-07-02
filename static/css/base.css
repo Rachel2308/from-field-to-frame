@@ -42,11 +42,13 @@ a {
     color: #080808 !important;
 }
 
-.banana {
+.profile-dropdown {
     background-color: #567d46;
     margin-top: -5px;
-    width: 50px;
+    width: 200px;
 }
+
+
 
 /* footer */
 
@@ -81,14 +83,68 @@ footer {
     border-style: solid;
     border-color: #567d46;
     border-width: 2px; 
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
    
 }
 
 .card {
-    margin-bottom: 50px;
+    margin-bottom: 50px !important;
 }
 
 .card-text {
     vertical-align: bottom;
     display: table-cell;
+}
+
+/* Blog Detail Page CSS*/
+
+
+
+/* Blog Detail Page CSS*/
+
+.blog-content {
+    max-width: 80%;
+    border-style: solid;
+    border-color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+
+}
+
+.blog-image {
+    max-width: 30%;
+    text-align: center;
+    
+}
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1393px) {
+	
+}
+
+@media screen and (max-width: 992px) {
+	
+}
+
+@media screen and (max-width: 768px) {
+	.logo-font {
+		font-size: 30px !important;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.logo-font {
+		font-size: 23px !important;
+	}
+	
 }

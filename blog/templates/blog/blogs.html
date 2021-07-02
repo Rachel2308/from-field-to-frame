@@ -9,13 +9,45 @@
     </div>
 
 
-{% for blog in blog %}
-
-<a href="#"><h2>{{ blog.title }}</h2></a>
-<h5>{{ blog.date|date:'j M Y' }}</h5>
-<p>{{ blog.description|striptags|truncatechars:100 }}</p>
 
 
+<div class="row">
+    <div class="product-container col-10 offset-1">
+        <div class="row mt-1 mb-2"></div>
+        <div class="row">
+            {% for blog in blog %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card art-card h-100">
+                        {% if blog.image %}
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                            </a>
+                            {% else %}
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
+                            </a>
+                            {% endif %}
+                            <div class="card-body pb-0">
+                                <a href="{% url 'blog_detail' blog.id %}" class="mb-5 card-text"><h4>{{ blog.title }}</h4></a>
+                                <h5>Published on {{ blog.date|date:'j M Y' }}</h5>
+                                <p>{{ blog.description|striptags }}</p>
+                            </div>
 
-{% endfor %}
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <a href="{% url 'blog_detail' blog.id %}">Read More</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
 {% endblock %}
