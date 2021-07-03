@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col text-center mt-3">
+        <h2 class="title-text page-title">{{ art.title }}</h2>
+        <hr class="w-50 mb-1">
+    </div>
+</div>
+<img class="card-img-top text-center" src="{{ art.image.url }}" alt="{{ art.title }}">
+<div class="row">
+<div class="col-10 offset-1 blog-content">
+{{ art.description }}
+</div>
+</div>
+<br>
+
+{% endblock %}
