@@ -9,6 +9,10 @@ body {
     
 }
 
+.potato {
+    max-width: 350px;
+}
+
 body { 
     background-color: #fffaf0;
     font-family: 'Lato', sans-serif;
@@ -27,20 +31,20 @@ hr {
     border-top: 3px double #567d46;
 }
 
+
 /* Header CSS*/
 
 header { 
     background-color: 	#567d46;
 }
 
-.main-logo-link {
-    width: fit-content;
-    
-}
+
 
 a {
-    color: #080808 !important;
+    color: #080808;
 }
+
+a: 
 
 .profile-dropdown {
     background-color: #567d46;
@@ -100,7 +104,22 @@ footer {
     display: table-cell;
 }
 
-/* Blog Detail Page CSS*/
+/* Art Detail Page CSS */
+
+.art-detail-card {
+    border-style: solid;
+    border-color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    background-color: white;
+    max-width: 50%;
+}
+
+/* Blog Page CSS*/
 
 
 
@@ -146,5 +165,10 @@ footer {
 	.logo-font {
 		font-size: 23px !important;
 	}
-	
+
+@media screen and (max-width: 450px) {
+    .logo-font {
+        font-size: 20px !important;
+    }
+
 }

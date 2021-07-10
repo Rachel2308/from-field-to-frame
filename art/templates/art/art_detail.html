@@ -7,10 +7,23 @@
         <hr class="w-50 mb-1">
     </div>
 </div>
-<img class="card-img-top text-center" src="{{ art.image.url }}" alt="{{ art.title }}">
+
+<div class="container-fluid">
 <div class="row">
-<div class="col-10 offset-1 blog-content">
-{{ art.description }}
+    <div class="col-sm-9 col-md-6 art-detail-card">
+        {% if art.image %}
+            <img class="card-img-top text-center" src="{{ art.image.url }}" alt="{{ art.title }}">
+            {% else %}
+            <img class="card-img-top text-center" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
+        {% endif %}
+
+    {{ art.title }}
+    {{ art.description }}
+</div>
+<div class="col-sm-3 col-md-6">
+    Basket
+</div>
+</div>
 </div>
 </div>
 <br>
