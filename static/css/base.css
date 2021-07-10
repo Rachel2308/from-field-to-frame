@@ -143,7 +143,25 @@ footer {
     
 }
 
+/* Furniture Detail page */
 
+.furniture-detail-card {
+    border-style: solid;
+    border-color: #567d46;
+    border-width: 2px; 
+    border-radius: 25px;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    max-width: 50%;  
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+}
+
+.furniture-img {
+    border-radius: 50px;
+}
 
 /* Media Queries */
 
