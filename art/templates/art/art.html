@@ -27,15 +27,15 @@
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card art-card h-100">
                             {% if art.image %}
-                                <a href="">
+                                <a href="{% url 'art_detail' art.id %}">
                                     <img class="card-img-top img-fluid" src="{{ art.image.url }}" alt="{{ art.title }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'art_detail' art.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
                                 </a>
                                 {% endif %}
-                                <div class="card-body pb-0">
+                                <div class="card-body art-img pb-0">
                                     
                                     <a href="{% url 'art_detail' art.id %}" class="mb-5 card-text"><h4>{{ art.title }}</h4></a>
                                 </div>

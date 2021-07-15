@@ -41,9 +41,11 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <a href="{% url 'furniture_detail' furniture.id %}">More Info</a>
-                                            <a href="{% url 'contact' %}">Contact Us</a>
-                                            
+
+                                            <a href="{% url 'furniture_detail' furniture.id %}" class="info-button">More Info</a>
+                                            <div class="right-align">
+                                            <a href="{% url 'contact' %}" class="contact-button">Contact Us</a>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>

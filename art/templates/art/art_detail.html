@@ -10,18 +10,22 @@
 
 <div class="container-fluid">
 <div class="row">
-    <div class="col-sm-9 col-md-6 art-detail-card">
+    <div class="col-sm-9 col-md-6 art-detail-card text-center">
         {% if art.image %}
+            a
             <img class="card-img-top text-center" src="{{ art.image.url }}" alt="{{ art.title }}">
             {% else %}
             <img class="card-img-top text-center" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
         {% endif %}
 
-    {{ art.title }}
-    {{ art.description }}
+    
 </div>
-<div class="col-sm-3 col-md-6">
-    Basket
+<div class="col-sm-3 col-md-6 art-detail-info">
+    {{ art.title }}
+    <br>
+    £{{ art.price }}
+    <br>
+    {{ art.description }}
 </div>
 </div>
 </div>
