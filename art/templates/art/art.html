@@ -19,22 +19,28 @@
             <hr class="w-50 mb-1">
         </div>
     </div>
-    <a  href="#" id="all-art-link" class="sort-art-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    
+    
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center sort-box">
+        <a  href="#" id="all-art-sort" class="sort-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Sort by Price <i class="fas fa-angle-down"></i>
     </a>
-    <div class="dropdown-menu border-0" aria-labelledby="all-art-link">
-        <a href="{% url 'art' %}?sort=price&direction=asc" class="dropdown-item sort-art-link">Lowest to Highest</a>
-        <a href="{% url 'art' %}?sort=price&direction=desc" class="dropdown-item sort-art-link">Highest to Lowest</a>
-        
-        
+    <div class="dropdown-menu sort-dropdown-box text-center border-0" aria-labelledby="all-art-sort">
+        <a href="{% url 'art' %}?sort=price&direction=asc" class="dropdown-item sort-text sort-link">Lowest to Highest</a>
+        <a href="{% url 'art' %}?sort=price&direction=desc" class="dropdown-item sort-text sort-link">Highest to Lowest</a>
     </div>
+</div>
+</div>
+
+    
     
     <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2">
             
                 {% for art in art %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
                         <div class="card art-card h-100">
                             {% if art.image %}
                                 <a href="{% url 'art_detail' art.id %}">

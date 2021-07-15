@@ -7,9 +7,25 @@ def all_blogs(request):
     """View to return the blog home page"""
 
     blog = Blog.objects.all()
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+
+        if 'direction' in request.GET:
+            direction = request.GET['direction']
+            if direction == 'desc':
+                sortkey = f'-{sortkey}'
+        blog = blog.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'blog': blog,
+        'current_sorting': current_sorting,
     }
     
     return render(request, 'blog/blogs.html', context)

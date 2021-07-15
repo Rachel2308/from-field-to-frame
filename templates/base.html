@@ -136,10 +136,23 @@
     {% block content %}
     {% endblock %}
 
+    <!--based on code from Code Institute's Boutique Ado Project -->
+    <div class="btt-button shadow-sm rounded-0 border">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+        </a>	
+    </div>
+
     {% block postloadjs %}
-    
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
         
     {% endblock %}
+
+    
 
     <footer class="container-fluid fixed-bottom text-center footer-links">
         <a href="" class= "mx-2 social-footer-links"><i class="fab fa-instagram"></i></a>

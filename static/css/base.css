@@ -27,8 +27,35 @@ body {
 
 hr {
     border-top: 3px double #567d46;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
+/* based on code from Code Institute's Boutique Ado Project */
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 70px;
+    right: 10px;
+    color: #567d46;
+}
+
+.sort-dropdown-box {
+    background-color: #567d46;
+}
+
+.sort-text {
+    color: #fffaf0;
+}
+
+.btt-link {
+    cursor: pointer;
+}
+
+.sort-box {
+    margin-top: 50px;
+}
 
 /* Header CSS*/
 
@@ -36,7 +63,9 @@ header {
     background-color: 	#567d46;
 }
 
-
+.sort-box {
+    margin-top: 50px;
+}
 
 a {
     color: #080808;
@@ -113,21 +142,19 @@ footer {
     color: #567d46;
 }
 
-#all-art-link {
+#all-art-sort {
     border-style: solid;
     border-color: #567d46;
     border-width: 2px; 
     border-radius: 5px;
-    margin-top: 40px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 40px;
     padding: 10px;
 }
 
-.sort-art-link:hover {
+.sort-link:hover {
     color: #567d46;
 }
+
+
 
 /* Art Detail Page CSS */
 
@@ -159,7 +186,17 @@ footer {
 
 /* Blog Page CSS*/
 
-
+#all-blog-sort {
+    border-style: solid;
+    border-color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+    padding: 10px;
+}
 
 /* Blog Detail Page CSS*/
 
