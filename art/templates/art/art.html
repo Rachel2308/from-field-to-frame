@@ -19,6 +19,16 @@
             <hr class="w-50 mb-1">
         </div>
     </div>
+    <a  href="#" id="all-art-link" class="sort-art-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sort by Price <i class="fas fa-angle-down"></i>
+    </a>
+    <div class="dropdown-menu border-0" aria-labelledby="all-art-link">
+        <a href="{% url 'art' %}?sort=price&direction=asc" class="dropdown-item sort-art-link">Lowest to Highest</a>
+        <a href="{% url 'art' %}?sort=price&direction=desc" class="dropdown-item sort-art-link">Highest to Lowest</a>
+        
+        
+    </div>
+    
     <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2">
@@ -37,7 +47,7 @@
                                 {% endif %}
                                 <div class="card-body art-img pb-0">
                                     
-                                    <a href="{% url 'art_detail' art.id %}" class="mb-5 card-text"><h4>{{ art.title }}</h4></a>
+                                    <a href="{% url 'art_detail' art.id %}" class="mb-5 card-text text-center"><h4>{{ art.title }}</h4></a>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">

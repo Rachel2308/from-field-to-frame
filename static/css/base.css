@@ -113,6 +113,22 @@ footer {
     color: #567d46;
 }
 
+#all-art-link {
+    border-style: solid;
+    border-color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.sort-art-link:hover {
+    color: #567d46;
+}
+
 /* Art Detail Page CSS */
 
 .art-detail-card {
@@ -245,10 +261,10 @@ footer {
 	.logo-font {
 		font-size: 23px !important;
 	}
+}
 
 @media screen and (max-width: 450px) {
     .logo-font {
         font-size: 20px !important;
     }
-
 }

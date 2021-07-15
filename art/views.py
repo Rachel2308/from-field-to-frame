@@ -7,9 +7,25 @@ def all_art(request):
     """View to return the art home page"""
 
     art = Art.objects.all()
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+
+        if 'direction' in request.GET:
+            direction = request.GET['direction']
+            if direction == 'desc':
+                sortkey = f'-{sortkey}'
+        art = art.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'art': art,
+        'current_sorting': current_sorting,
     }
     
     return render(request, 'art/art.html', context)
@@ -24,3 +40,5 @@ def art_detail(request, art_id):
     }
     
     return render(request, 'art/art_detail.html', context)
+
+
