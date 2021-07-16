@@ -12,6 +12,8 @@
 
 {% block content %}
 
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
@@ -19,18 +21,27 @@
             <hr class="w-50 mb-1">
         </div>
     </div>
-    
-    
-    <div class="row">
-        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center sort-box">
-        <a  href="#" id="all-art-sort" class="sort-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Sort by Price <i class="fas fa-angle-down"></i>
-    </a>
-    <div class="dropdown-menu sort-dropdown-box text-center border-0" aria-labelledby="all-art-sort">
-        <a href="{% url 'art' %}?sort=price&direction=asc" class="dropdown-item sort-text sort-link">Lowest to Highest</a>
-        <a href="{% url 'art' %}?sort=price&direction=desc" class="dropdown-item sort-text sort-link">Highest to Lowest</a>
+</div>
+
+<div class="row text-center" id = "delivery-banner">
+    <div class="col">
+        <h3 class="my-1">Free delivery on art orders over £{{ free_delivery_threshold }}</h3>
     </div>
 </div>
+    
+<div class="row">
+    <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center sort-box">
+        <a href="#" id="all-art-sort" class="sort-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Sort by Price <i class="fas fa-angle-down"></i>
+        </a>
+        <div class="dropdown-menu sort-dropdown-box text-center border-0" aria-labelledby="all-art-sort">
+            <a href="{% url 'art' %}?sort=price&direction=asc" class="dropdown-item sort-text sort-link">Lowest to
+                Highest</a>
+            <a href="{% url 'art' %}?sort=price&direction=desc" class="dropdown-item sort-text sort-link">Highest to
+                Lowest</a>
+        </div>
+    </div>
 </div>
 
     
@@ -69,5 +80,5 @@
             </div>
         </div>
     </div>
-</div>
+
 {% endblock %}

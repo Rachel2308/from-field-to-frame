@@ -24,14 +24,14 @@
             <div class="row mt-1 mb-2"></div>
             <div class="row">
                 {% for furniture in furniture %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
                         <div class="card art-card h-100">
                             {% if furniture.image %}
-                                <a href="">
+                                <a href="{% url 'furniture_detail' furniture.id %}">
                                     <img class="card-img-top img-fluid" src="{{ furniture.image.url }}" alt="{{ art.title }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'furniture_detail' furniture.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
                                 </a>
                                 {% endif %}

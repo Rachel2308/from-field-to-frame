@@ -12,28 +12,33 @@
 {% block content %}
 
 <div class="container-fluid">
-<div class="row">
+    <div class="row">
         <div class="col text-center mt-3">
             <h2 class="title-text page-title">Our Blogs</h2>
             <hr class="w-50 mb-1">
         </div>
     </div>
+</div>
+
     <div class="row">
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center sort-box">
-<a  href="#" id="all-blog-sort" class="sort-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Sort by Date <i class="fas fa-angle-down"></i>
-</a>
-<div class="dropdown-menu sort-dropdown-box border-0" aria-labelledby="all-blog-sort">
-    <a href="{% url 'blog' %}?sort=date&direction=desc" class="dropdown-item sort-text sort-link">Most Recent</a>
-    <a href="{% url 'blog' %}?sort=date&direction=asc" class="dropdown-item sort-text sort-link">Oldest</a>
-</div>
-</div>
-</div>
+            <a href="#" id="all-blog-sort" class="sort-link" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Sort by Date <i class="fas fa-angle-down"></i>
+            </a>
+            <div class="dropdown-menu sort-dropdown-box border-0" aria-labelledby="all-blog-sort">
+                <a href="{% url 'blog' %}?sort=date&direction=desc" class="dropdown-item sort-text sort-link">Most
+                    Recent</a>
+                <a href="{% url 'blog' %}?sort=date&direction=asc" class="dropdown-item sort-text sort-link">Oldest</a>
+            </div>
+        </div>
+    </div>
+
 
 
 <div class="row">
     <div class="product-container col-10 offset-1">
-        <div class="row mt-1 mb-2"></div>
+        <div class="row mt-1 mb-2">
         <div class="row">
             {% for blog in blog %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
