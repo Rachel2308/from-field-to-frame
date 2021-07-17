@@ -8,32 +8,56 @@
     </div>
 </div>
 
-<div class="row text-center" id = "delivery-banner">
+<div class="row text-center" id="delivery-banner">
     <div class="col">
         <h3 class="my-1">Free delivery on art orders over £{{ free_delivery_threshold }}</h3>
     </div>
 </div>
 
 <div class="container-fluid">
-<div class="row">
-    <div class="col-sm-9 col-md-6 art-detail-card text-center">
-        {% if art.image %}
-            a
+    <div class="row">
+        <div class="col-sm-9 col-md-6 art-detail-card text-center">
+            {% if art.image %}
             <img class="card-img-top text-center" src="{{ art.image.url }}" alt="{{ art.title }}">
             {% else %}
             <img class="card-img-top text-center" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
-        {% endif %}
+            {% endif %}
 
-    
-</div>
-<div class="col-sm-3 col-md-6 art-detail-info">
-    {{ art.title }}
-    <br>
-    £{{ art.price }}
-    <br>
-    {{ art.description }}
-</div>
-</div>
+
+        </div>
+        <div class="col-sm-3 col-md-6 art-detail-info">
+            {{ art.title }}
+            <br>
+            £{{ art.price }}
+            <br>
+            {{ art.description }}
+            <form class="form" action="{% url 'add_to_basket' art.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-12">
+                        <p class="mt-3"><strong>Quantity:</strong></p>
+                        <div class="form-group w-50">
+                            <div class="input-group">
+                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1"
+                                    max="99" data-item_id="{{ art.id }}" id="id_qty_{{ art.id }}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <a href="{% url 'art' %}" class="btn btn-outline-black rounded-0 mt-5">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase keep-shopping-button">Keep Shopping</span>
+                        </a>
+                        <input type="submit" class="btn text-uppercase mt-5 add-to-basket-button" value="Add to Basket">
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 </div>
 <br>

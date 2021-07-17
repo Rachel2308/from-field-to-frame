@@ -184,6 +184,41 @@ footer {
     max-width: 35%;
 }
 
+.keep-shopping-button{
+    border-style: solid;
+    border-color: #567d46;
+    color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+.keep-shopping-button:hover {
+    background-color: #567d46;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.add-to-basket-button{
+    border-style: solid;
+    border-color: #567d46;
+    background-color: #567d46;
+    color: white;
+    border-width: 2px; 
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+.add-to-basket-button:hover {
+    color: #567d46;
+    background-color: white;
+    text-decoration: none;
+}
+
 /* Blog Page CSS*/
 
 #all-blog-sort {
