@@ -313,6 +313,43 @@ footer {
     border-radius: 5px;
 }
 
+/* Basket page */
+
+.keep-shopping-button{
+    border-style: solid;
+    border-color: #567d46;
+    color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+.keep-shopping-button:hover {
+    background-color: #567d46;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.checkout-button{
+    border-style: solid;
+    border-color: #567d46;
+    background-color: #567d46;
+    color: white;
+    border-width: 2px; 
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+.checkout-button:hover {
+    color: #567d46;
+    background-color: white;
+    text-decoration: none;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1393px) {
