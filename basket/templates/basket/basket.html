@@ -29,11 +29,11 @@
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
-                                <th scope="col" class = "text-center">Product Name</th>
-                                <th scope="col"></th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Subtotal</th>
+                                <th scope="col" class = "text-center">Product Details</th>
+                                <th scope="col" class = "text-center"></th>
+                                <th scope="col" class = "text-center">Price</th>
+                                <th scope="col" class = "text-center">Quantity</th>
+                                <th scope="col" class = "text-center">Subtotal</th>
                             </tr>
                         </thead>
                         {% for item in basket_items %}
@@ -42,16 +42,16 @@
                                     <a href="{% url 'art_detail' item.art.id %}"><img src="{{ item.art.image.url }}" alt="{{ item.art.name }}" class="img-fluid rounded"></a>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0"><strong>{{ item.art.title }}</strong></p>
+                                    <p class="my-0 text-center"><strong>{{ item.art.title }}</strong></p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0"><strong>£{{ item.art.price }}</strong></p>
+                                    <p class="my-0 text-center"><strong>£{{ item.art.price }}</strong></p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0"><strong>{{ item.art.quantity }}</strong></p>
+                                    <p class="my-0 text-center"><strong>{{ item.quantity }}</strong></p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0"><strong>£{{ item.art.price }}</strong></p>
+                                    <p class="my-0 text-center"><strong>£{{ item.art.price }}</strong></p>
                                 </td>
 
                             </tr>

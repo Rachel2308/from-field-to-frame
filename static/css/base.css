@@ -219,6 +219,16 @@ footer {
     text-decoration: none;
 }
 
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.btn-black:hover {
+    background: black;
+    color: white;
+}
+
 /* Blog Page CSS*/
 
 #all-blog-sort {
