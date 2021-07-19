@@ -229,6 +229,13 @@ footer {
     color: white;
 }
 
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+
 /* Blog Page CSS*/
 
 #all-blog-sort {
