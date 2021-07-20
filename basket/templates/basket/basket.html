@@ -43,7 +43,7 @@
                             <tr>
                                 
                                 <td class="p-3 w-25">
-                                    <a href="{% url 'art_detail' item.art.id %}"><img src="{{ item.art.image.url }}" alt="{{ item.art.name }}" class="img-fluid basket-image text-center rounded"></a>
+                                    <a href="{% url 'art_detail' item.art.id %}"><img src="{{ item.art.image.url }}" alt="{{ item.art.title }}" class="img-fluid basket-image text-center rounded"></a>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0 text-center"><strong>{{ item.art.title }}</strong></p>
@@ -102,7 +102,11 @@
                                     {% else %}
                                     <p>FREE DELIVERY</p>
                                     {% endif %}
+                                    {% if free_delivery_delta > 0 %}
                                     <h4 class="mt-4"><strong>Total: £{{ grand_total | calc_delivery_total }}</strong></h4>
+                                    {% else %}
+                                    <h4 class="mt-4"><strong>Total: £{{ grand_total }}</strong></h4>
+                                    {% endif %}
                                     {% if free_delivery_delta > 0 %}
                                         <p class="mb-1 text-danger">
                                             Spend just <strong>£{{ free_delivery_delta }}</strong> more and qualify for free delivery!
