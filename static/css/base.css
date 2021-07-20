@@ -6,12 +6,6 @@ body {
     
     color: #555;
     font-family: 'Lato';
-    
-}
-
-
-
-body { 
     background-color: #fffaf0;
     font-family: 'Lato', sans-serif;
     padding-bottom: 100px;
@@ -25,7 +19,7 @@ body {
     margin-top: 100px;
 }
 
-hr {
+.title-hr {
     border-top: 3px double #567d46;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -55,6 +49,21 @@ hr {
 
 .sort-box {
     margin-top: 50px;
+}
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
 }
 
 /* Header CSS*/
@@ -93,7 +102,8 @@ footer {
 }
 
 .social-footer-links {
-    margin-top: 50px;
+    
+    vertical-align: middle;
 }
 
 .footer-links {
@@ -235,6 +245,10 @@ footer {
     cursor: pointer;
 }
 
+.basket-image {
+    max-width: 30%;
+}
+
 
 /* Blog Page CSS*/
 
@@ -366,6 +380,19 @@ footer {
     background-color: white;
     text-decoration: none;
 }
+
+.basket-image {
+    max-width: 40%;
+    display:block;
+    margin:auto;
+}
+
+th {
+    text-transform: uppercase;
+
+}
+
+
 
 /* Media Queries */
 

@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col text-center mt-3">
             <h2 class="title-text page-title">Your Basket</h2>
-            <hr class="w-50 mb-1">
+            <hr class="w-50 mb-1 title-hr">
         </div>
     </div>
 </div>
@@ -31,16 +31,19 @@
                         <thead>
                             <tr>
                                 <th scope="col" class = "text-center">Product Details</th>
-                                <th scope="col" class = "text-center"></th>
+                                <th scope="col" class = "text-center">Product Name</th>
                                 <th scope="col" class = "text-center">Price</th>
                                 <th scope="col" class = "text-center">Quantity</th>
                                 <th scope="col" class = "text-center">Subtotal</th>
                             </tr>
+                            
                         </thead>
+                        
                         {% for item in basket_items %}
                             <tr>
+                                
                                 <td class="p-3 w-25">
-                                    <a href="{% url 'art_detail' item.art.id %}"><img src="{{ item.art.image.url }}" alt="{{ item.art.name }}" class="img-fluid rounded"></a>
+                                    <a href="{% url 'art_detail' item.art.id %}"><img src="{{ item.art.image.url }}" alt="{{ item.art.name }}" class="img-fluid basket-image text-center rounded"></a>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0 text-center"><strong>{{ item.art.title }}</strong></p>
@@ -90,11 +93,16 @@
                            
                             {% endfor %}
                             
+                            
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
                                     <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery: £4.99</h6>
-                                    <h4 class="mt-4"><strong>Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                                    {% if free_delivery_delta > 0 %}
+                                    <h6>Delivery: £5</h6>
+                                    {% else %}
+                                    <p>FREE DELIVERY</p>
+                                    {% endif %}
+                                    <h4 class="mt-4"><strong>Total: £{{ grand_total | calc_delivery_total }}</strong></h4>
                                     {% if free_delivery_delta > 0 %}
                                         <p class="mb-1 text-danger">
                                             Spend just <strong>£{{ free_delivery_delta }}</strong> more and qualify for free delivery!
@@ -118,12 +126,13 @@
                                     </a>
                                 </td>
                             </tr>
+                        
                     </table>
                 </div>
             {% else %}
                 <p class="text-center">Your shopping basket is empty</p>
                 <div class="col-6 offset-3 my-auto">
-                    <img class="main-image" src="/media/bluebellrainbow-home-page.png" alt="Bluebell rainbow image">
+                    <img class="basket-image" src="/media/bluebellrainbow-home-page.png" alt="Bluebell rainbow image">
                 </div>
                 <a href="{% url 'art' %}" class ="btn btn-outline-black rounded btn-lg">
                     <span class="icon">
@@ -133,6 +142,14 @@
             {% endif %}
         </div>
     </div>
+</div>
+
+   <!--based on code from Code Institute's Boutique Ado Project -->
+
+   <div class="btt-button shadow-sm rounded-0 border">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+    </a>	
 </div>
 
 {% endblock %}
@@ -162,5 +179,11 @@
              location.reload();
          });
     })
+
+    
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+
 </script>
 {% endblock %}
