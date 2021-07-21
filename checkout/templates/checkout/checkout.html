@@ -27,7 +27,7 @@
 </div>
 
 <div class="row">
-    <div class="col-12 offset col-lg-6 order-lg-last mb-5">
+    <div class="col-10 col-lg-5 order-lg-last mb-5">
         <p class="text-muted text-center"><strong>Order Summary ({{ art_count }})</strong></p>
         <div class="row">
             <div class="col-7 offset-2">
@@ -146,16 +146,17 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
+    {{ block.super }}
 
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 
-
-
-<script type="text/javascript">
+    <script type="text/javascript">
     
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
-    })
-
-</script>
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
+    </script>
 {% endblock %}
+
