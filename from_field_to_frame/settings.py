@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'furniture',
     'blog',
     'basket',
+    'checkout',
     
 ]
 
@@ -166,3 +167,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FREE_DELIVERY_THRESHOLD = 40
+STANDARD_DELIVERY_COST = 5
