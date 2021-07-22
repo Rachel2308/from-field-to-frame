@@ -465,10 +465,13 @@ th {
 
 .success-title {
     color: black;
+    font-size: 2em;
+    
 }
 
 .success-header {
     color: #424242;
+    font-size: 1.1em;
 }
 
 

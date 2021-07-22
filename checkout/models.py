@@ -10,12 +10,12 @@ from art.models import Art
 """Based on Code Institute's Boutique Ado project"""
 
 class Order(models.Model):
-    order_number = models.CharField(max_length=32, null=False, editable=False)
+    order_number = models.CharField(max_length=15, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
     country = models.CharField(max_length=40, null=True, blank=True)
-    postcode = models.CharField(max_length=20, null=False, blank=False)
+    postcode = models.CharField(max_length=20, null=True, blank=True)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
@@ -27,7 +27,7 @@ class Order(models.Model):
 
     def _generate_order_number(self):
         """Generate a random and unique order number using UUID"""
-        return uuid.uuid4().hex.upper()
+        return uuid.uuid4().hex.upper()[:15]
 
     def update_total(self):
         """
