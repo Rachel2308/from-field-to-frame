@@ -9,6 +9,7 @@ import stripe
 
 # From Stripe's documentation and Code Institute's Boutique Ado Project 
 
+
 @require_POST
 @csrf_exempt
 def webhook(request):
