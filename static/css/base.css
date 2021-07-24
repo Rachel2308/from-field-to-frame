@@ -177,6 +177,52 @@ footer {
     max-width: 80%;
 }
 
+/* Allauth pages CSS */
+
+.allauth-links {
+    color: #567d46;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.allauth-links:hover {
+    color: #424242;
+}
+
+.account-home-btn {
+    border-style: solid;
+    border-color: #567d46;
+    color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.account-home-btn:hover {
+    background-color: #567d46;
+    color: white;
+    text-decoration: none;
+}
+
+.account-action-btn {
+    border-style: solid;
+    border-color: #567d46;
+    background-color: #567d46;
+    color: white;
+    border-width: 2px; 
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+
+.account-action-btn:hover {
+    color: #567d46;
+    background-color: white;
+    text-decoration: none;
+}
+
+
 /* Art page CSS */
 
 .art-card {

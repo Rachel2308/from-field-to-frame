@@ -5,9 +5,16 @@
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col text-center mt-3">
+          <h2 class="title-text page-title">Log In</h2>
+          <hr class="w-50 mb-1 title-hr">
+      </div>
+  </div>
+
 
 {% get_providers as socialaccount_providers %}
 
@@ -29,18 +36,22 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 {% include "socialaccount/snippets/login_extra.html" %}
 
 {% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<p class="mt-2">{% blocktrans %}If you have not created an account yet, then please
+<a class="allauth-links" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form | crispy }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <a class ="btn account-home-btn" href="{% url 'home' %}">Home</a>
+ 
+  <button class="primaryAction account-action-btn" type="submit">{% trans "Sign In" %}</button>
+  <p class="mt-2">
+    Forgotten Password? <a class="button secondaryAction allauth-links" href="{% url 'account_reset_password' %}">{% trans "Click here to reset!" %}</a>
+    </p>
 </form>
 
 {% endblock %}
