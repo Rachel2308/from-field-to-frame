@@ -14,6 +14,7 @@
           <hr class="w-50 mb-1 title-hr">
       </div>
   </div>
+</div>
 
 
 {% get_providers as socialaccount_providers %}
@@ -53,5 +54,6 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
     Forgotten Password? <a class="button secondaryAction allauth-links" href="{% url 'account_reset_password' %}">{% trans "Click here to reset!" %}</a>
     </p>
 </form>
+
 
 {% endblock %}
