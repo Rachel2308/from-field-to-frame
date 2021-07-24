@@ -105,12 +105,12 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-white font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                        <a class="{% if total %}text-white font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
                             <div class="text-center header-basket-icon">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
-                                    {% if grand_total %}
-                                        £{{ grand_total|floatformat:2 }}
+                                    {% if total %}
+                                        £{{ total|floatformat:2 }}
                                     {% else %}
                                         £0.00
                                     {% endif %}
@@ -164,10 +164,12 @@
 
     
 
-    <footer class="container-fluid fixed-bottom text-center footer-links">
-        <a href="" class= "mx-2 social-footer-links"><i class="fab fa-instagram"></i></a>
-        <a href="" class= "mx-2 social-footer-links"><i class="fab fa-twitter"></i></a>
-        <a href="" class= "mx-2 social-footer-links"><i class="fab fa-facebook-f"></i></a>
+    <footer class="container-fluid fixed-bottom text-center footer-links mt-auto">
+        
+            <a target="_blank" href="https://www.instagram.com/fromfieldtoframe/?hl=en-gb" class= "mx-2 pt-5 social-footer-links"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://twitter.com/" class= "mx-2 social-footer-links"><i class="fab fa-twitter"></i></a>
+            <a target="_blank" href="https://facebook.com/" class= "mx-2 social-footer-links"><i class="fab fa-facebook-f"></i></a>
+        
     </footer>
     
   </body>

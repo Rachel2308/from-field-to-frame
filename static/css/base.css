@@ -149,6 +149,7 @@ footer a:hover {
     color: #080808;
 }
 
+
 /* footer */
 
 footer {
@@ -162,7 +163,7 @@ footer {
 }
 
 .footer-links {
-    margin-top: 50px;
+    margin-top: 200px;
 }
 
 /* Home Page CSS */
@@ -247,6 +248,15 @@ footer {
     margin-bottom: 40px;
     background-color: white;
     max-width: 35%;
+}
+
+.art-detail-title {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.art-detail-button {
+    max-width: 10%;
 }
 
 .keep-shopping-button{
