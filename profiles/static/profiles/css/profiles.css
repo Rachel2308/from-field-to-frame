@@ -1,0 +1,28 @@
+.user-profile-form {
+    border-style: solid;
+    border-color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_default_country option:first-child {
+    color: #aab7c4;
+}
+
+#update-profile-form input::placeholder {
+    color: #aab7c4;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
