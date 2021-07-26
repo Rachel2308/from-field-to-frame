@@ -49,9 +49,9 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% endif %}
   <a class ="btn account-home-btn" href="{% url 'home' %}">Home</a>
  
-  <button class="primaryAction account-action-btn" type="submit">{% trans "Sign In" %}</button>
+  <button class="primaryAction btn account-action-btn" type="submit">{% trans "Sign In" %}</button>
   <p class="mt-2">
-    Forgotten Password? <a class="button secondaryAction allauth-links" href="{% url 'account_reset_password' %}">{% trans "Click here to reset!" %}</a>
+    Forgotten Password? <a class="btn secondaryAction allauth-links" href="{% url 'account_reset_password' %}">{% trans "Click here to reset!" %}</a>
     </p>
 </form>
 

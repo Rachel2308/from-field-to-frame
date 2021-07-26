@@ -17,7 +17,7 @@
                 {{ message }}       
             </div>
         </div>
-        {% if grand_total %}
+        {% if total %}
             <p class = "bg-white text-black py-1">Your Basket ({{ art_count }} total items)</p>
             <div class="basket-notification-wrapper">
             {% for item in basket_items %}
