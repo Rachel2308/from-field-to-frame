@@ -1,1 +1,1 @@
-web: gunicorn from-field-to-frame.wsgi:application
+web: gunicorn from_field_to_frame.wsgi:application
