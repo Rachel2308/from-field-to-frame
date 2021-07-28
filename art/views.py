@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Art
+from .forms import ArtForm
 
 # Create your views here.
 
@@ -41,4 +42,12 @@ def art_detail(request, art_id):
     
     return render(request, 'art/art_detail.html', context)
 
+def add_art(request):
+    """Add art to store"""
+    form = ArtForm()
+    template = 'art/add_art.html'
+    context = {
+        'form': form,
+    }
 
+    return render(request, template, context)

@@ -66,14 +66,13 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile.default_full_name = shipping_details.full_name
                 profile.default_phone_number = shipping_details.phone
                 profile.default_street_address1 = shipping_details.address.line1
                 profile.default_street_address2 = shipping_details.address.line2
                 profile.default_town_or_city = shipping_details.address.city
-                profile.default_county = shipping_details.address.county
+                profile.default_county = shipping_details.address.state
                 profile.default_country = shipping_details.address.country
-                profile.default_postcode = shipping_details.address.post_code
+                profile.default_postcode = shipping_details.address.postal_code
                 profile.save()
     
 
@@ -142,7 +141,6 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
-
         
 
     def handle_payment_intent_payment_failed(self, event):
