@@ -48,9 +48,9 @@ def add_art(request):
     if request.method == 'POST':
         form = ArtForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            art = form.save()
             messages.success(request, 'Item added!')
-            return redirect(reverse('art'))
+            return redirect(reverse('art_detail', args=[art.id]))
         else:
             messages.error(
                 request, 'Product could not be added, please check the form and try again.')
@@ -87,3 +87,10 @@ def edit_art(request, art_id):
     }
 
     return render(request, template, context)
+
+def delete_art(request, art_id):
+    """ Delete an item from the store """
+    art = get_object_or_404(Art, pk=art_id)
+    art.delete()
+    messages.success(request, 'Item deleted!')
+    return redirect(reverse('art'))

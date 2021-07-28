@@ -341,8 +341,8 @@ footer {
 }
     
 .art-detail-button:hover {
-    background-color: #567d46;
-    color: white;
+    background-color: white;
+    color: #567d46;
     text-decoration: none;
 }
 
