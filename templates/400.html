@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="title-text page-title">404 error</h2>
+            <hr class="w-50 mb-1 title-hr">
+        </div>
+  <p>The server didn't particularly like that!</p>
+  <a class="error-link" href="{{ url ('home') }}">Go back to the home page</a>
+    </div>
+{% endblock %}

@@ -59,7 +59,7 @@
                         <li><a href="{% url 'furniture' %}" class="mr-3">Furniture</a></li>
                         <li><a href="{% url 'blog' %}" class="mr-3">Blog</a></li>
                         <li><a href="{% url 'contact' %}" class="mr-3">Contact</a></li>
-                        <li><a href="#" class="d-lg-none mr-3">Account</a></li>
+                        <li><a href="{% url 'profile' %}" class="mr-3 d-block d-lg-none">Profile</a></li>
                      </ul>
                   </div>
                </div>
@@ -94,7 +94,8 @@
                         <div class="dropdown-menu profile-dropdown border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_art' %}" class="dropdown-item">Product Management</a>
+                                    <a href="{% url 'add_art' %}" class="dropdown-item">Add Art</a>
+                                    
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
