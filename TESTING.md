@@ -3,3 +3,7 @@ Testing on checkout page. If user closes the page before form has been submitted
 testing on add_product page
 
 invlaid form is entered (tested through adding invalid price) - error message pops up advising user to correct the price (But not a toast)
+
+testing on edit_product page
+
+invlaid form is entered (tested through adding invalid price) - error message pops up advising user to correct the price (But not a toast)
