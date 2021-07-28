@@ -43,7 +43,12 @@
                             <tr>
                                 
                                 <td class="p-3 w-25">
+                                    {% if item.art.image %}
                                     <a href="{% url 'art_detail' item.art.id %}"><img src="{{ item.art.image.url }}" alt="{{ item.art.title }}" class="img-fluid basket-image text-center rounded"></a>
+                                    {% else %}
+                                    <a href="{% url 'art_detail' item.art.id %}"><img src="{{ MEDIA_URL }}noimage.png" alt="{{ item.art.title }}" class="img-fluid basket-image text-center rounded"></a>
+                                    {% endif %}
+                                    
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0 text-center"><strong>{{ item.art.title }}</strong></p>

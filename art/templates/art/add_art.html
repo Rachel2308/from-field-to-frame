@@ -21,8 +21,8 @@
 </div>
 
 <div class="row">
-    <div class="col-10 offset-1 col-md-6 offet-md-3">
-        <form methid = "POST" action="{% url 'add_art' %}" class="form mb-2" enctyoe = "multipart/form-data">
+    <div class="col-10 offset-1 col-md-6 offset-md-3">
+        <form method = "POST" action="{% url 'add_art' %}" class="form mb-2" enctype = "multipart/form-data">
             {% csrf_token %}
             {{ form | crispy}}
             <div class="text-right">
@@ -51,6 +51,8 @@
         window.scrollTo(0,0)
     })
 </script>
+
+{% endblock %}
     
 
 

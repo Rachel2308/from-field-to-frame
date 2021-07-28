@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from .models import Art
 from .forms import ArtForm
 
@@ -44,7 +45,18 @@ def art_detail(request, art_id):
 
 def add_art(request):
     """Add art to store"""
-    form = ArtForm()
+    if request.method == 'POST':
+        form = ArtForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Item added!')
+            return redirect(reverse('art'))
+        else:
+            messages.error(
+                request, 'Product could not be added, please check the form and try again.')
+    else:
+        form = ArtForm()
+
     template = 'art/add_art.html'
     context = {
         'form': form,

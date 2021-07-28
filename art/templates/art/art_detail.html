@@ -16,16 +16,15 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-9 col-md-6 art-detail-card text-center">
+        <div class="col-10 offset-1 col-md-9 art-detail-card text-center">
             {% if art.image %}
             <img class="card-img-top text-center" src="{{ art.image.url }}" alt="{{ art.title }}">
             {% else %}
             <img class="card-img-top text-center" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
-            {% endif %}
-
-
+                {% endif %}
         </div>
-        <div class="col-sm-3 col-md-6 art-detail-info">
+
+        <div class="col-10 offset-1 col-md-3 art-detail-info">
             <div class="text-center art-detail-title"><strong>{{ art.title }}</strong></div>
             <br>
             <strong>Description:</strong> {{ art.description }}
