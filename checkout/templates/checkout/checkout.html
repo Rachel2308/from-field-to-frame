@@ -79,10 +79,11 @@
                     <legend class="field-set-label small px-2 w-auto checkout-header">Customer Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="field-set-label small px-2 w-auto checkout-header">Delivery Information</legend>
-                    {{ order_form.phone_number | as_crispy_field }}
+                    
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
                     {{ order_form.town_or_city | as_crispy_field }}
