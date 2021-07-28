@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Art
 from .forms import ArtForm
 
@@ -43,8 +44,14 @@ def art_detail(request, art_id):
     
     return render(request, 'art/art_detail.html', context)
 
+
+@login_required
 def add_art(request):
     """Add art to store"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permission to perform this function.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ArtForm(request.POST, request.FILES)
         if form.is_valid():
@@ -65,8 +72,13 @@ def add_art(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_art(request, art_id):
     """ Edit a item of art in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permission to perform this function.')
+        return redirect(reverse('home'))
+
     art = get_object_or_404(Art, pk=art_id)
     if request.method == 'POST':
         form = ArtForm(request.POST, request.FILES, instance=art)
@@ -88,8 +100,14 @@ def edit_art(request, art_id):
 
     return render(request, template, context)
 
+
+@login_required
 def delete_art(request, art_id):
     """ Delete an item from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permission to perform this function.')
+        return redirect(reverse('home'))
+        
     art = get_object_or_404(Art, pk=art_id)
     art.delete()
     messages.success(request, 'Item deleted!')
