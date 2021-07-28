@@ -598,6 +598,38 @@ font-size: 1.3rem;
         margin-bottom: 10px;
 }
 
+/* Edit / Add Product Widget */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.btn-widget {
+    background-color: #567d46;
+    color: #fffaf0;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.btn-widget:hover {
+    background-color: #fffaf0;
+    color: #567d46;
+    border-radius: 5px;
+    border-color: #567d46;
+    margin-left: 10px;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1393px) {

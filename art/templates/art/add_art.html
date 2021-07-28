@@ -24,7 +24,13 @@
     <div class="col-10 offset-1 col-md-6 offset-md-3">
         <form method = "POST" action="{% url 'add_art' %}" class="form mb-2" enctype = "multipart/form-data">
             {% csrf_token %}
-            {{ form | crispy}}
+            {% for field in form %}
+                {% if field.name != 'image' %}
+                    {{ field | as_crispy_field }}
+                {% else %}
+                    {{ field }}
+                {% endif %}
+            {% endfor %}
             <div class="text-right">
                 <a class = "btn account-home-btn" href="{% url 'art' %}">Cancel</a>
                 <button class = "btn account-action-btn" type="submit">Add Product</button>
@@ -50,6 +56,11 @@
     $('.btt-link').click(function(e) {
         window.scrollTo(0,0)
     })
+
+    $('#new-image').change(function() {
+            var file = $('#new-image')[0].files[0];
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        });
 </script>
 
 {% endblock %}
