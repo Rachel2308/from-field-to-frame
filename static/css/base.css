@@ -13,6 +13,7 @@ body {
 
 .title-text { 
     font-family: 'Niconne', cursive;
+    font-size: 3rem;
 }
 
 .page-title {
@@ -475,6 +476,18 @@ footer {
     background-color: white;
     text-decoration: none;
 }
+
+.furniture-home-page-text {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.furniture-home-page-signature {
+    font-size: 2rem;
+    font-family: 'Niconne', cursive;
+}
+
 
 /* Furniture Detail page */
 
