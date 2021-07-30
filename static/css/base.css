@@ -150,6 +150,16 @@ footer a:hover {
     color: #080808;
 }
 
+.img-fluid {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+      
+}
 
 /* footer */
 
