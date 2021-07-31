@@ -3,11 +3,11 @@
 ## **Bugs**
 
 * **Issue**
-  
+    Buttons were not aligning on some of the allauth templates
 
 
     **Fix**
-  
+    Found to be an issue with getting the home button aligning with the input on some of the pages. Additional CSS class written to change the home button CSS when it was paired with an input instead of a button
 
 
   ---

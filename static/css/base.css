@@ -188,6 +188,14 @@ footer {
     max-width: 80%;
 }
 
+/* Contact Page CSS */
+
+.sent-message-text,
+.contact-page-text {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
 /* Allauth pages CSS */
 
 .allauth-links {
@@ -225,13 +233,25 @@ footer {
     border-width: 2px; 
     border-radius: 5px;
     padding: 5px;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
-.account-home-btn:hover {
+.account-home-btn:hover,
+.input-home-btn:hover {
     background-color: #567d46;
     color: white;
     text-decoration: none;
+}
+
+.input-home-btn {
+    border-style: solid;
+    border-color: #567d46;
+    color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: -4px;
+    
 }
 
 .account-action-btn {
@@ -244,6 +264,8 @@ footer {
     padding: 5px;
     margin-top: 15px;
 }
+
+
 
 
 .account-action-btn:hover {

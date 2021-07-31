@@ -28,7 +28,13 @@
         <h3 class="my-1">Free delivery on art orders over £{{ free_delivery_threshold }}</h3>
     </div>
 </div>
-    
+{% if request.user.is_authenticated %}
+{% if request.user.is_superuser %}
+    <div class="text-center mt-3">
+        <a href="{% url 'add_art' %}" class="account-action-btn">Add Item of Art to Site</a>   
+    </div>          
+{% endif %}            
+{% endif %}            
 <div class="row">
     <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center sort-box">
         <a href="#" id="all-art-sort" class="sort-link" data-toggle="dropdown" aria-haspopup="true"
@@ -84,7 +90,7 @@
                                     <a class="text-danger" href="{% url 'delete_art' art.id %}">Delete</a>
                                     </small>
                                 </div>
-                {% endif %}
+                                {% endif %}
                         </div>
                         
                     </div>

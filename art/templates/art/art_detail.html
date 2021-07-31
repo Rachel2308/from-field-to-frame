@@ -13,7 +13,13 @@
         <h3 class="my-1">Free delivery on art orders over £{{ free_delivery_threshold }}</h3>
     </div>
 </div>
-
+{% if request.user.is_authenticated %}
+{% if request.user.is_superuser %}
+    <div class="text-center mt-3">
+        <a href="{% url 'add_art' %}" class="account-action-btn">Add Item of Art to Site</a>   
+    </div>          
+{% endif %}            
+{% endif %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-10 offset-1 col-md-9 art-detail-card text-center">

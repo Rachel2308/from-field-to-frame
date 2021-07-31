@@ -8,34 +8,51 @@
     </div>
 </div>
 
+{% if request.user.is_authenticated %}
+{% if request.user.is_superuser %}
+<div class="text-center mt-3">
+    <a href="{% url 'add_furniture' %}" class="account-action-btn">Add Furniture Upcyling Example to Site</a>
+</div>
+{% endif %}
+{% endif %}
+
 <div class="container-fluid">
-<div class="row">
-    <div class="col-sm-6 offset-sm-3  furniture-detail-card">
-        {% if furniture.image %}
-            <img class="card-img-top text-center furniture-img" src="{{ furniture.image.url }}" alt="{{ furniture.title }}">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3  furniture-detail-card">
+            {% if furniture.image %}
+            <img class="card-img-top text-center furniture-img" src="{{ furniture.image.url }}"
+                alt="{{ furniture.title }}">
             {% else %}
             <img class="card-img-top text-center" src="{{ MEDIA_URL }}noimage.png" alt="{{ furniture.title }}">
-        {% endif %}
+            {% endif %}
         </div>
 
         <div class="col-sm-9 col-md-6 furniture-detail-card">
-    {{ furniture.description }}
-    <br>
-    <a href="{% url 'contact' %}">Contact Us</a>
-</div>
+            {{ furniture.description }}
+            <br>
+            <a href="{% url 'contact' %}">Contact Us</a>
+            {% if request.user.is_superuser %}
+            <div class="right-align">
+                <small class="ml-3">
+                    <a href="{% url 'edit_furniture' furniture.id %}">Edit</a>
+                    <a class="text-danger" href="{% url 'delete_furniture' furniture.id %}">Delete</a>
+                </small>
+            </div>
+            {% endif %}
+        </div>
 
 
-</div>
+    </div>
 </div>
 </div>
 <br>
 
-   <!--based on code from Code Institute's Boutique Ado Project -->
+<!--based on code from Code Institute's Boutique Ado Project -->
 
-   <div class="btt-button shadow-sm rounded-0 border">
+<div class="btt-button shadow-sm rounded-0 border">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up mx-auto my-auto"></i>
-    </a>	
+    </a>
 </div>
 
 {% endblock %}
@@ -43,9 +60,9 @@
 {% block postloadjs %}
 
 <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
     })
 </script>
-    
+
 {% endblock %}

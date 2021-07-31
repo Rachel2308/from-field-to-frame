@@ -224,8 +224,8 @@ Go to settings, and within Config Vars enter the following
 
 ### Code
 
-* The code that formed the basis of the project is based on the code from the Task Manager App Walkthrough project on the LMS. 
-* Code for the forms, modal and navbars were adapted from the materialize framework.
+* The code that formed the basis of the project is based on the Boutique Ado Walkthrough project on the LMS. 
+* The code for the contact form is based this [ordinarycoders tutorial](https://www.ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend)
 
 
 

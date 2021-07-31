@@ -3,11 +3,11 @@
 
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -20,54 +20,76 @@
         </div>
     </div>
 
-    <p class="text-center furniture-home-page-text">As well as my painting, another passion of mine is upcycling furniture. Here are some of my favourite past projects, I loved seeing how they could change from old and drab to a beautiful item that look fab in any room.</p>
-    <p class="text-center furniture-home-page-text">If you have any old furniture that you would like to be given a new lease of life, then please get in touch and we can discuss what you're looking for.</p>
+    <p class="text-center furniture-home-page-text">As well as my painting, another passion of mine is upcycling
+        furniture. Here are some of my favourite past projects, I loved seeing how they could change from old and drab
+        to a beautiful item that look fab in any room.</p>
+    <p class="text-center furniture-home-page-text">If you have any old furniture that you would like to be given a new
+        lease of life, then please get in touch and we can discuss what you're looking for.</p>
     <p class="text-center furniture-home-page-signature"> Holly x</p>
-    
-        <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2"></div>
-            <div class="row">
-                {% for furniture in furniture %}
-                    <div class="col-xs-12 col-sm-6 col-lg-4">
-                        <div class="card art-card h-100">
-                            {% if furniture.image %}
-                                <a href="{% url 'furniture_detail' furniture.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ furniture.image.url }}" alt="{{ art.title }}">
-                                </a>
-                                {% else %}
-                                <a href="{% url 'furniture_detail' furniture.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
-                                </a>
-                            {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-5 card-text">{{ furniture.title }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
 
-                                            <a href="{% url 'furniture_detail' furniture.id %}" class="info-button">More Info</a>
-                                            <div class="right-align">
-                                            <a href="{% url 'contact' %}" class="contact-button">Contact Us</a>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
+    {% if request.user.is_authenticated %}
+    {% if request.user.is_superuser %}
+    <div class="text-center mt-3">
+        <a href="{% url 'add_furniture' %}" class="account-action-btn">Add Furniture Upcyling Example to Site</a>
+    </div>
+    {% endif %}
+    {% endif %}
+
+    <div class="product-container col-10 offset-1">
+        <div class="row mt-1 mb-2"></div>
+        <div class="row">
+            {% for furniture in furniture %}
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="card art-card h-100">
+                    {% if furniture.image %}
+                    <a href="{% url 'furniture_detail' furniture.id %}">
+                        <img class="card-img-top img-fluid" src="{{ furniture.image.url }}" alt="{{ art.title }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'furniture_detail' furniture.id %}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
+                    </a>
+                    {% endif %}
+                    <div class="card-body pb-0">
+                        <p class="mb-5 card-text">{{ furniture.title }}</p>
                     </div>
-                {% endfor %}
+                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="row">
+                            <div class="col">
+
+                                <a href="{% url 'furniture_detail' furniture.id %}" class="info-button">More Info</a>
+                                <div class="right-align">
+                                    <a href="{% url 'contact' %}" class="contact-button">Contact Us</a>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    {% if request.user.is_superuser %}
+                    <div class="right-align">
+                        <small class="ml-3">
+                            <a href="{% url 'edit_furniture' furniture.id %}">Edit</a>
+                            <a class="text-danger" href="{% url 'delete_furniture' furniture.id %}">Delete</a>
+                        </small>
+                    </div>
+                    {% endif %}
+                    
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
+</div>
 
-   <!--based on code from Code Institute's Boutique Ado Project -->
+<!--based on code from Code Institute's Boutique Ado Project -->
 
-   <div class="btt-button shadow-sm rounded-0 border">
+<div class="btt-button shadow-sm rounded-0 border">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up mx-auto my-auto"></i>
-    </a>	
+    </a>
 </div>
 
 {% endblock %}
@@ -75,9 +97,9 @@
 {% block postloadjs %}
 
 <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
     })
 </script>
-    
+
 {% endblock %}
