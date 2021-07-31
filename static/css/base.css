@@ -5,7 +5,6 @@ html {
 body {
     
     color: #555;
-    font-family: 'Lato';
     background-color: #fffaf0;
     font-family: 'Lato', sans-serif;
     padding-bottom: 100px;
@@ -157,8 +156,6 @@ footer a:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
-
-      
 }
 
 /* footer */
@@ -338,7 +335,7 @@ footer {
     margin-bottom: 40px;
     background-color: white;
     max-width: 90%;
-    ;
+    
 }
 
 .art-detail-info {
