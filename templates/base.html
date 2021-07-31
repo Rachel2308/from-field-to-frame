@@ -103,8 +103,8 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if total %}text-white font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
-                            <div class="text-center header-basket-icon">
+                        <a class="{% if total %}text-white header-basket-icon font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                            <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if total %}

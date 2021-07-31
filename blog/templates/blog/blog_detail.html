@@ -7,6 +7,13 @@
         <hr class="w-50 mb-1 title-hr">
     </div>
 </div>
+{% if request.user.is_authenticated %}
+{% if request.user.is_superuser %}
+    <div class="text-center mt-3">
+        <a href="{% url 'add_art' %}" class="account-action-btn">Add New Blog Article</a>   
+    </div>          
+{% endif %}            
+{% endif %} 
 <!-- <img class="card-img-top blog-image text-center" src="{{ blog.image.url }}" alt="{{ blog.title }}"> -->
 <div class="row">
     <div class="col-10 offset-1 blog-content">
@@ -15,7 +22,12 @@
 </div>
 <br>
 <h3 class="published-date text-center">Published {{ blog.date|date:'F jS Y'}}</h2>
-
+    {% if request.user.is_superuser %}
+    <div class="ml-3 text-center">
+        <a href="{% url 'edit_blog' blog.id %}" class="edit-delete-link">Edit</a>
+        <a class="text-danger edit-delete-link" href="{% url 'delete_blog' blog.id %}">Delete</a>
+    </div>
+    {% endif %}
     <!--based on code from Code Institute's Boutique Ado Project -->
 
 <div class="btt-button shadow-sm rounded-0 border">

@@ -20,6 +20,14 @@
     </div>
 </div>
 
+{% if request.user.is_authenticated %}
+{% if request.user.is_superuser %}
+    <div class="text-center mt-3">
+        <a href="{% url 'add_blog' %}" class="account-action-btn">Add New Blog Article</a>   
+    </div>          
+{% endif %}            
+{% endif %} 
+
     <div class="row">
         <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center sort-box">
             <a href="#" id="all-blog-sort" class="sort-link" data-toggle="dropdown" aria-haspopup="true"
@@ -63,6 +71,12 @@
                                     <a href="{% url 'blog_detail' blog.id %}">Read More</a>
                                 </div>
                             </div>
+                            {% if request.user.is_superuser %}
+    <div class="ml-3 text-center">
+        <a href="{% url 'edit_blog' blog.id %}" class="edit-delete-link">Edit</a>
+        <a class="text-danger edit-delete-link" href="{% url 'delete_blog' blog.id %}">Delete</a>
+    </div>
+    {% endif %}
                     </div>
                 </div>
                 

@@ -68,13 +68,11 @@
                         
                     </div>
                     {% if request.user.is_superuser %}
-                    <div class="right-align">
-                        <small class="ml-3">
-                            <a href="{% url 'edit_furniture' furniture.id %}">Edit</a>
-                            <a class="text-danger" href="{% url 'delete_furniture' furniture.id %}">Delete</a>
-                        </small>
-                    </div>
-                    {% endif %}
+                <div class="ml-3 text-center">
+                    <a href="{% url 'edit_furniture' furniture.id %}" class="edit-delete-link">Edit</a>
+                    <a class="text-danger edit-delete-link" href="{% url 'delete_furniture' furniture.id %}">Delete</a>
+                </div>
+                {% endif %}
                     
                 </div>
             </div>

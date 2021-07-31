@@ -14,7 +14,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="title-text page-title">Add Product</h2>
+            <h2 class="title-text page-title">Add Blog</h2>
             <hr class="w-50 mb-1 title-hr">
         </div>
     </div>
@@ -22,7 +22,7 @@
 
 <div class="row">
     <div class="col-10 offset-1 col-md-6 offset-md-3">
-        <form method = "POST" action="{% url 'add_art' %}" class="form mb-2" enctype = "multipart/form-data">
+        <form method = "POST" action="{% url 'add_blog' %}" class="form mb-2" enctype = "multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
                 {% if field.name != 'image' %}
@@ -31,9 +31,9 @@
                     {{ field }}
                 {% endif %}
             {% endfor %}
-            <div class="text-center">
-                <a class = "btn account-home-btn" href="{% url 'art' %}">Cancel</a>
-                <button class = "btn account-action-btn" type="submit">Add Product</button>
+            <div class="text-right">
+                <a class = "btn account-home-btn" href="{% url 'blog' %}">Cancel</a>
+                <button class = "btn account-action-btn" type="submit">Add Blog</button>
             </div>
         </form>
     </div>
