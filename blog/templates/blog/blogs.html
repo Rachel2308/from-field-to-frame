@@ -50,7 +50,7 @@
         <div class="row">
             {% for blog in blog %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card art-card h-100">
+                    <div class="card art-card h-90">
                         {% if blog.image %}
                             <a href="{% url 'blog_detail' blog.id %}">
                                 <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">

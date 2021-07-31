@@ -53,12 +53,12 @@
 
 
 <div class="row">
-    <div class="product-container col-10 offset-1">
+    <div class="col-10 offset-1">
         <div class="row mt-1 mb-2">
 
             {% for art in art %}
             <div class="col-xs-12 col-sm-6 col-lg-4">
-                <div class="card art-card h-100">
+                <div class="card art-card h-90">
 
                     {% if art.image %}
                     <a href="{% url 'art_detail' art.id %}">
@@ -72,7 +72,7 @@
                     <div class="card-body art-img pb-0">
 
                         <a href="{% url 'art_detail' art.id %}" class="mb-5 card-text text-center">
-                            <h4>{{ art.title }}</h4>
+                            <h4 class="art-title">{{ art.title }}</h4>
                         </a>
                     </div>
                     <div class="card-footer bg-white pt-0 border-0 text-left">
@@ -83,8 +83,9 @@
                             </div>
                         </div>
                     </div>
-
-                    <a href="{% url 'art_detail' art.id %}" class="art-detail-button text-center">More Info</a>
+                    <div class="text-center ">
+                    <a href="{% url 'art_detail' art.id %}" class="art-detail-button">More Info</a>
+                    </div>
                     {% if request.user.is_superuser %}
                     {% if request.user.is_superuser %}
                     <div class="ml-3 text-center">

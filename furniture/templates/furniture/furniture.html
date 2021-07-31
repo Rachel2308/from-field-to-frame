@@ -34,13 +34,13 @@
     </div>
     {% endif %}
     {% endif %}
-
-    <div class="product-container col-10 offset-1">
+<div class="row">
+    <div class="col-10 offset-1">
         <div class="row mt-1 mb-2"></div>
         <div class="row">
             {% for furniture in furniture %}
             <div class="col-xs-12 col-sm-6 col-lg-4">
-                <div class="card art-card h-100">
+                <div class="card art-card h-90">
                     {% if furniture.image %}
                     <a href="{% url 'furniture_detail' furniture.id %}">
                         <img class="card-img-top img-fluid" src="{{ furniture.image.url }}" alt="{{ art.title }}">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="card-footer bg-white pt-0 border-0 text-left">
                         <div class="row">
-                            <div class="col">
+                            <div class="col mt-3">
 
                                 <a href="{% url 'furniture_detail' furniture.id %}" class="info-button">More Info</a>
                                 <div class="right-align">
@@ -81,7 +81,7 @@
     </div>
 </div>
 </div>
-
+</div>
 <!--based on code from Code Institute's Boutique Ado Project -->
 
 <div class="btt-button shadow-sm rounded-0 border">

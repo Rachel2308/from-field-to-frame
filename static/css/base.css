@@ -288,6 +288,7 @@ footer {
     margin-right: 10px;
     margin-left: 10px;
     margin-bottom: 40px;
+    padding-bottom: 20px;
    
 }
 
@@ -368,11 +369,8 @@ footer {
     border-width: 2px; 
     border-radius: 5px;
     padding: 5px;
-    max-width: 20%;
-    margin-left: 15px;
-    margin-bottom: 15px;
-
-
+    max-width: 40%;
+    margin-bottom: 25px;
 }
     
 .art-detail-button:hover {
@@ -702,7 +700,8 @@ font-size: 1.3rem;
 }
 
 @media screen and (max-width: 992px) {
-	
+	.home-page-content {
+        margin-top: 120px;
 }
 
 @media screen and (max-width: 768px) {
@@ -711,14 +710,22 @@ font-size: 1.3rem;
 	}
 }
 
+@media screen and (max-width: 655px) {
+	.art-title {
+        font-size: 1.2rem;
+    }
+}
+
 @media screen and (max-width: 576px) {
 	.logo-font {
-		font-size: 23px !important;
+		font-size: 2rem !important;
 	}
+
+    
 }
 
 @media screen and (max-width: 450px) {
     .logo-font {
-        font-size: 20px !important;
+        font-size: 1.4rem !important;
     }
 }
