@@ -39,7 +39,7 @@
         <div class="row mt-1 mb-2"></div>
         <div class="row">
             {% for furniture in furniture %}
-            <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="card art-card h-90">
                     {% if furniture.image %}
                     <a href="{% url 'furniture_detail' furniture.id %}">
@@ -50,25 +50,21 @@
                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
                     </a>
                     {% endif %}
-                    <div class="card-body pb-0">
-                        <p class="mb-5 card-text">{{ furniture.title }}</p>
+                    <div class="pb-0 furniture-title text-center">
+                        <p class="mb-5">{{ furniture.title }}</p>
                     </div>
-                    <div class="card-footer bg-white pt-0 border-0 text-left">
-                        <div class="row">
-                            <div class="col mt-3">
+                
+                    <div class="card-footer bg-white pt-0 border-0">
+                            <div class="col mt-3 text-center">
 
                                 <a href="{% url 'furniture_detail' furniture.id %}" class="info-button">More Info</a>
-                                <div class="right-align">
-                                    <a href="{% url 'contact' %}" class="contact-button">Contact Us</a>
-                                </div>
+                                
                                 
                             </div>
-                            
-                        </div>
                         
                     </div>
                     {% if request.user.is_superuser %}
-                <div class="ml-3 text-center">
+                <div class="text-center">
                     <a href="{% url 'edit_furniture' furniture.id %}" class="edit-delete-link">Edit</a>
                     <a class="text-danger edit-delete-link" href="{% url 'delete_furniture' furniture.id %}">Delete</a>
                 </div>

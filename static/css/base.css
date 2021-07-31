@@ -300,10 +300,6 @@ footer {
     margin-bottom: 50px !important;
 }
 
-.card-text {
-    vertical-align: bottom;
-    display: table-cell;
-}
 
 .card-text:hover {    
     color: #567d46;
@@ -319,6 +315,10 @@ footer {
 
 .sort-link:hover {
     color: #567d46;
+}
+
+.edit-delete-link {
+    margin-top: 100px;
 }
 
 .edit-delete-link:hover {
@@ -479,6 +479,10 @@ footer {
     border-radius: 5px;
     padding: 5px;
 
+}
+
+.furniture-title {
+    font-size: 1.3rem;
 }
 
 .contact-button:hover {

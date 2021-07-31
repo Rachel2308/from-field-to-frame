@@ -60,19 +60,19 @@
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.title }}">
                             </a>
                             {% endif %}
-                            <div class="card-body pb-0">
-                                <a href="{% url 'blog_detail' blog.id %}" class="mb-5 card-text"><h4>{{ blog.title }}</h4></a>
-                                <h5>Published on {{ blog.date|date:'j M Y' }}</h5>
-                                <p>{{ blog.description|striptags }}</p>
+                            <div class="pb-0">
+                                <a href="{% url 'blog_detail' blog.id %}" class="mb-5 card-text text-center"><h4>{{ blog.title }}</h4></a>
+                                <h5 class="ml-2">Published on {{ blog.date|date:'j M Y' }}</h5>
+                                <p class="ml-2">{{ blog.description|striptags }}</p>
                             </div>
 
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
-                                <div class="row">
-                                    <a href="{% url 'blog_detail' blog.id %}">Read More</a>
-                                </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-center">
+                                
+                                    <a href="{% url 'blog_detail' blog.id %}" class="info-button">Read More</a>
+                    
                             </div>
                             {% if request.user.is_superuser %}
-    <div class="ml-3 text-center">
+    <div class="text-center">
         <a href="{% url 'edit_blog' blog.id %}" class="edit-delete-link">Edit</a>
         <a class="text-danger edit-delete-link" href="{% url 'delete_blog' blog.id %}">Delete</a>
     </div>

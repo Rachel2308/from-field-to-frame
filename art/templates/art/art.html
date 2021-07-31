@@ -69,7 +69,7 @@
                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
                     </a>
                     {% endif %}
-                    <div class="card-body art-img pb-0">
+                    <div class="art-img pb-0">
 
                         <a href="{% url 'art_detail' art.id %}" class="mb-5 card-text text-center">
                             <h4 class="art-title">{{ art.title }}</h4>
@@ -88,7 +88,7 @@
                     </div>
                     {% if request.user.is_superuser %}
                     {% if request.user.is_superuser %}
-                    <div class="ml-3 text-center">
+                    <div class="text-center">
                         <a href="{% url 'edit_art' art.id %}" class="edit-delete-link">Edit</a>
                         <a class="text-danger edit-delete-link" href="{% url 'delete_art' art.id %}">Delete</a>
                     </div>
