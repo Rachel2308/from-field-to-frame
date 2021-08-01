@@ -22,7 +22,7 @@
 
 {% if request.user.is_authenticated %}
 {% if request.user.is_superuser %}
-    <div class="text-center mt-3">
+    <div class="text-center mt-2">
         <a href="{% url 'add_blog' %}" class="account-action-btn">Add New Blog Article</a>   
     </div>          
 {% endif %}            
@@ -71,12 +71,14 @@
                                     <a href="{% url 'blog_detail' blog.id %}" class="info-button">Read More</a>
                     
                             </div>
+                            
                             {% if request.user.is_superuser %}
-    <div class="text-center">
-        <a href="{% url 'edit_blog' blog.id %}" class="edit-delete-link">Edit</a>
-        <a class="text-danger edit-delete-link" href="{% url 'delete_blog' blog.id %}">Delete</a>
-    </div>
-    {% endif %}
+                            <div class="text-center">
+                                <a href="{% url 'edit_blog' blog.id %}" class="edit-delete-link">Edit</a>
+                                <a class="text-danger edit-delete-link" href="{% url 'delete_blog' blog.id %}">Delete</a>
+                            </div>
+                            {% endif %}
+                            
                     </div>
                 </div>
                 

@@ -23,11 +23,14 @@
 <br>
 <h3 class="published-date text-center">Published {{ blog.date|date:'F jS Y'}}</h2>
     {% if request.user.is_superuser %}
-    <div class="ml-3 text-center">
+    <div class="text-center">
         <a href="{% url 'edit_blog' blog.id %}" class="edit-delete-link">Edit</a>
         <a class="text-danger edit-delete-link" href="{% url 'delete_blog' blog.id %}">Delete</a>
     </div>
     {% endif %}
+    <div class="text-center mt-2">
+        <a href="{% url 'blog' %}" class="account-action-btn"><i class="fas fa-arrow-left"></i> Back to all blogs</a>
+    </div>
     <!--based on code from Code Institute's Boutique Ado Project -->
 
 <div class="btt-button shadow-sm rounded-0 border">

@@ -88,7 +88,7 @@
                     </div>
                     {% if request.user.is_superuser %}
                     {% if request.user.is_superuser %}
-                    <div class="text-center">
+                    <div class="text-center mt-2">
                         <a href="{% url 'edit_art' art.id %}" class="edit-delete-link">Edit</a>
                         <a class="text-danger edit-delete-link" href="{% url 'delete_art' art.id %}">Delete</a>
                     </div>

@@ -11,7 +11,7 @@
 {% if request.user.is_authenticated %}
 {% if request.user.is_superuser %}
 <div class="text-center mt-3">
-    <a href="{% url 'add_furniture' %}" class="account-action-btn">Add Furniture Upcyling Example to Site</a>
+    <a href="{% url 'add_furniture' %}" class="account-action-btn">Add Example Furniture Project</a>
 </div>
 {% endif %}
 {% endif %}
@@ -31,14 +31,20 @@
             
             <p>{{ furniture.description }}</p>
             <br>
-            <a href="{% url 'contact' %}" class="contact-us-btn text-center">Contact Us</a>
+            <div class="text-center">
+            <a href="{% url 'contact' %}" class="contact-us-btn">Contact Us</a>
+            </div>
             {% if request.user.is_superuser %}
-                <div class="ml-3 text-center">
+                <div class="text-center mt-2">
                     <a href="{% url 'edit_furniture' furniture.id %}" class="edit-delete-link">Edit</a>
                     <a class="text-danger edit-delete-link" href="{% url 'delete_furniture' furniture.id %}">Delete</a>
                 </div>
                 {% endif %}
+                <div class="text-center mt-2">
+                    <a href="{% url 'furniture' %}" class="account-action-btn"><i class="fas fa-arrow-left"></i> Back to all furniture</a>
+                </div>
         </div>
+
 
 
     </div>
