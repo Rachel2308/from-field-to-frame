@@ -15,10 +15,10 @@
 </div>
 {% if request.user.is_authenticated %}
 {% if request.user.is_superuser %}
-    <div class="text-center mt-3">
-        <a href="{% url 'add_art' %}" class="account-action-btn">Add Item of Art to Site</a>   
-    </div>          
-{% endif %}            
+<div class="text-center mt-3">
+    <a href="{% url 'add_art' %}" class="account-action-btn">Add Item of Art to Site</a>
+</div>
+{% endif %}
 {% endif %}
 <div class="container-fluid">
     <div class="row">
@@ -27,16 +27,22 @@
             <img class="card-img-top text-center" src="{{ art.image.url }}" alt="{{ art.title }}">
             {% else %}
             <img class="card-img-top text-center" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
-                {% endif %}
+            {% endif %}
         </div>
 
         <div class="col-10 offset-1 col-md-5 art-detail-info">
             <div class="text-center art-detail-title"><strong>{{ art.title }}</strong></div>
+            {% if request.user.is_superuser %}
+            <div class="text-center mt-2">
+                <a href="{% url 'edit_art' art.id %}" class="edit-delete-link">Edit</a>
+                <a class="text-danger edit-delete-link" href="{% url 'delete_art' art.id %}">Delete</a>
+            </div>
+            {% endif %}
             <br>
             <strong>Description:</strong> {{ art.description }}
             <br>
             <strong>Price:</strong> £{{ art.price }}
-            
+
             <form class="form" action="{% url 'add_to_basket' art.id %}" method="POST">
                 {% csrf_token %}
                 <div class="form-row">
@@ -45,71 +51,69 @@
                         <div class="form-group w-50">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ art.id }}" id="decrement-qty_{{ art.id }}">
+                                    <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ art.id }}"
+                                        id="decrement-qty_{{ art.id }}">
                                         <span class="icon">
                                             <i class="fas fa-minus"></i>
                                         </span>
 
                                     </button>
 
+
+                                    <input class="form-control qty_input" type="number" name="quantity" value="1"
+                                        min="1" max="99" data-item_id="{{ art.id }}" id="id_qty_{{ art.id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty btn btn-black rounded-0"
+                                            data-item_id="{{ art.id }}" id="increment-qty_{{ art.id }}">
+                                            <span class="icon">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+
+                                        </button>
+                                        <div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" class="btn text-uppercase mt-3 add-to-basket-button"
+                                value="Add to Basket">
+                                </div>
                                 
-                                <input class="form-control qty_input" type="number" 
-                                name="quantity" value="1" min="1" max="99" 
-                                data-item_id="{{ art.id }}" id="id_qty_{{ art.id }}">
-                                <div class="input-group-append">
-                                    <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ art.id }}" id="increment-qty_{{ art.id }}">
-                                        <span class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </span>
-
-                                    </button>    
-                                <div>
-
+                                    
+                                    
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                
                             </div>
-                        </div>
-                    </div>
 
-                    
-                        <a href="{% url 'art' %}" class="btn btn-outline-black rounded-0 mt-5">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase keep-shopping-button">Keep Shopping</span>
-                        </a>
-                        <input type="submit" class="btn text-uppercase mt-5 add-to-basket-button" value="Add to Basket">
-                    
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                </div>
-                {% if request.user.is_superuser %}
-                <div class="text-center mt-2">
-                    <a href="{% url 'edit_art' art.id %}" class="edit-delete-link">Edit</a>
-                    <a class="text-danger edit-delete-link" href="{% url 'delete_art' art.id %}">Delete</a>
-                </div>
-                {% endif %}
-                <div class="text-center mt-2">
-                    <a href="{% url 'art' %}" class="account-action-btn"><i class="fas fa-arrow-left"></i> Back to all art</a>
-                </div>
-            </form> 
-            
+
+            </form>
+
         </div>
-    </div>
-</div>
-</div>
-<br>
 
+    </div>
+
+</div>
+
+</div>
+
+
+<br>
+<div class="ml-5">
+    <a href="{% url 'art' %}" class="account-action-btn"><i class="fas fa-arrow-left"></i> Back to all art</a>
+</div>
 <!--based on code from Code Institute's Boutique Ado Project -->
 <div class="btt-button shadow-sm rounded-0 border">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up mx-auto my-auto"></i>
-    </a>	
+    </a>
 </div>
 
 {% endblock %}
 
 {% block postloadjs %}
 <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
     })
 </script>
 {{ block.super }}

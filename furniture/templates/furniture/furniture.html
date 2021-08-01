@@ -50,12 +50,16 @@
                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
                     </a>
                     {% endif %}
+                    
                     <div class="pb-0 furniture-title text-center">
-                        <p class="mb-5">{{ furniture.title }}</p>
+                        <a href="{% url 'furniture_detail' furniture.id %}" class="mb-5 card-text text-center">
+                            <h4 class="art-title">{{ furniture.title }}</h4>
+                        </a>
+                        
                     </div>
                 
                     <div class="card-footer bg-white pt-0 border-0">
-                            <div class="col mt-3 text-center">
+                            <div class="text-center mt-2">
 
                                 <a href="{% url 'furniture_detail' furniture.id %}" class="info-button">More Info</a>
                                 

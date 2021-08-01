@@ -392,7 +392,9 @@ footer {
     text-decoration: none;
 }
 
-
+.form-control {
+    width: 90px;
+}
 
 .add-to-basket-button{
     border-style: solid;
@@ -402,6 +404,7 @@ footer {
     border-width: 2px; 
     border-radius: 5px;
     padding: 5px;
+    text-align: right;
 
 }
 
