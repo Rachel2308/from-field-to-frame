@@ -528,11 +528,8 @@ footer {
     border-color: #567d46;
     border-width: 2px; 
     border-radius: 5px;
-    margin-top: 40px;
-    margin-right: 40px;
-    margin-left: 140px;
-    margin-bottom: 40px;
-     
+    margin: 40px;
+    max-width: 80%;
     padding-top: 15px; 
     padding-bottom: 15px; 
 }
@@ -608,6 +605,8 @@ th {
 
 }
 
+
+
 /* Checkout Success Page */
 
 .order-confirmation-wrapper {
@@ -660,6 +659,7 @@ font-size: 1.3rem;
         margin-right: 10px;
         margin-left: 10px;
         margin-bottom: 10px;
+        width: 90%;
 }
 
 /* Edit / Add Product Widget */
