@@ -158,6 +158,8 @@ footer a:hover {
     margin-right: auto;
 }
 
+
+
 /* footer */
 
 footer {
@@ -262,17 +264,11 @@ footer {
     margin-top: 15px;
 }
 
-
-
-
 .account-action-btn:hover {
     color: #567d46;
     background-color: white;
     text-decoration: none;
 }
-
-
-
 
 /* Art page CSS */
 
@@ -351,6 +347,14 @@ footer {
     margin-top: 40px;
 }
 
+.image-link {
+    color: #555;
+}
+
+.image-link:hover {
+    color: #567d46;
+    text-decoration: none;
+}
 .art-detail-title {
     font-size: 1.5em;
     margin-top: 10px;
@@ -529,14 +533,26 @@ footer {
     border-width: 2px; 
     border-radius: 5px;
     margin: 40px;
-    max-width: 80%;
     padding-top: 15px; 
     padding-bottom: 15px; 
 }
 
+
 .furniture-img {
+    border-style: solid;
+    border-color: #567d46;
+    border-width: 2px; 
     border-radius: 5px;
+    border-radius: 5px;
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
 }
+
 
 .contact-us-btn {
     border-style: solid;
@@ -605,7 +621,10 @@ th {
 
 }
 
-
+.empty-basket-text {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
 
 /* Checkout Success Page */
 
@@ -650,7 +669,7 @@ font-size: 1.3rem;
 /* Product Management - Add Product*/
 
 
-.add-product-form {
+.site-forms {
         border-style: solid;
         border-color: #567d46;
         border-width: 2px; 
@@ -728,5 +747,16 @@ font-size: 1.3rem;
 @media screen and (max-width: 450px) {
     .logo-font {
         font-size: 1.4rem !important;
+    }
+
+    .list-inline-item {
+        margin-top: -5px;
+        margin-right: 50px;
+        font-size: 0.9rem;
+    }
+
+    .furniture-img {
+        width: 290px;
+        height: 290px;
     }
 }

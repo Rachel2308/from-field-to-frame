@@ -83,9 +83,8 @@
 
 * Testing has been undertaken on devices down to 320px.
 
-### **Section**
-
-* #### Header
+#### App - Home
+* #### Homepage
     * **When logged in**
         
 
@@ -96,32 +95,69 @@
 
 
 
-* #### **Log in**
+* #### **Contact Page**
     * 
    
+#### App - Art
 
-* #### **Registration**
+* #### **Art Home Page**
     * 
 
 
-* #### **Log out**
+* #### **Art Detail Page**
     * 
 
 
-* #### ** **
+* #### **Add Art Page**
     * 
 
+* #### **Edit Art Page**
+    * 
+
+* #### **Delete Art Page**
+    * 
+
+#### App - Furniture
+
+* #### **Furniture Home Page**
+    * 
+
+
+* #### **Furniture Detail Page**
+    * 
+
+
+* #### **Add Furniture Page**
+    * 
+
+* #### **Edit Furniture Page**
+    * 
+
+* #### **Delete Furniture Page**
+    * 
     
 
+#### App - Blog
+
+* #### **Blog Home Page**
+    * 
+
+
+* #### **Blog Detail Page**
+    * 
+
+
+* #### **Add Blog Page**
+    * 
+
+* #### **Edit Blog Page**
+    * 
+
+* #### **Delete Blog Page**
+    * 
  
 
 
-
-
-
- 
-
-* #### **delete_task**
    
 
  

@@ -49,24 +49,22 @@
             <div class="col-3 my-1 d-flex flex-row">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-               aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-               <div class="container-fluid ">
-                  <div>
-                     <ul class="navbar-nav">
-                        <li><a href="{% url 'art' %}" class="mr-3">Art</a></li>
-                        <li><a href="{% url 'furniture' %}" class="mr-3">Furniture</a></li>
-                        <li><a href="{% url 'blog' %}" class="mr-3">Blog</a></li>
-                        <li><a href="{% url 'contact' %}" class="mr-3">Contact</a></li>
-                        <li><a href="{% url 'profile' %}" class="mr-3 d-block d-lg-none">Profile</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-
-            
-                    
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <div class="container-fluid ">
+                            <div>
+                                <ul class="navbar-nav">
+                                    <li><a href="{% url 'art' %}" class="mr-3">Art</a></li>
+                                    <li><a href="{% url 'furniture' %}" class="mr-3">Furniture</a></li>
+                                    <li><a href="{% url 'blog' %}" class="mr-3">Blog</a></li>
+                                    <li><a href="{% url 'contact' %}" class="mr-3">Contact</a></li>
+                                    <li><a href="{% url 'profile' %}" class="mr-3 d-block d-lg-none">Profile</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
             </div>
             
@@ -78,10 +76,6 @@
             
 
             <!-- From Code Institute Boutique Ado walkthrough project -->
-
-            
-            
-            
             <div class="col-3 my-1 py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-right my-0">
                     <li class="list-inline-item dropdown">
@@ -102,20 +96,22 @@
                             {% endif %}
                         </div>
                     </li>
-                    <li class="list-inline-item">
-                        <a class="{% if total %}text-white header-basket-icon font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if total %}
-                                        £{{ total|floatformat:2 }}
-                                    {% else %}
-                                        £0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
+                      
+                        <li class="list-inline-item">
+                            <a class="{% if total %}text-white header-basket-icon font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                                <div class="text-center">
+                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                    <p class="my-0">
+                                        {% if total %}
+                                            £{{ total|floatformat:2 }}
+                                        {% else %}
+                                            £0.00
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    
                 </ul>
             </div>
         </div>
