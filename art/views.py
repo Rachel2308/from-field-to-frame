@@ -107,7 +107,6 @@ def delete_art(request, art_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you do not have permission to perform this function.')
         return redirect(reverse('home'))
-        
     art = get_object_or_404(Art, pk=art_id)
     art.delete()
     messages.success(request, 'Item deleted!')

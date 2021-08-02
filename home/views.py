@@ -32,10 +32,7 @@ def contact(request):
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found')
             return redirect ('message_sent')
-            messages.success(request, (
-                f'This is an order confirmation for your previous order, {order_number}. '
-                'You received an email confirmation on the order date.'
-            ))
+            
 
     form = ContactForm()
     return render(request, 'home/contact.html', {'form': form})
