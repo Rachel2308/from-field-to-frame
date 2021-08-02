@@ -30,10 +30,10 @@
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
-                                <th scope="col" class = "text-center">Product Details</th>
-                                <th scope="col" class = "text-center">Product Name</th>
+                                <th scope="col" class = "text-center">Image</th>
+                                <th scope="col" class = "text-center">Title</th>
                                 <th scope="col" class = "text-center">Price</th>
-                                <th scope="col" class = "text-center">Quantity</th>
+                                <th scope="col" class = "text-center">Qty</th>
                                 <th scope="col" class = "text-center">Subtotal</th>
                             </tr>
                             
@@ -42,12 +42,18 @@
                         {% for item in basket_items %}
                             <tr>
                                 
-                                <td class="p-3 w-25">
-                                    {% if item.art.image %}
-                                    <a href="{% url 'art_detail' item.art.id %}"><img src="{{ item.art.image.url }}" alt="{{ item.art.title }}" class="img-fluid basket-image text-center rounded"></a>
-                                    {% else %}
-                                    <a href="{% url 'art_detail' item.art.id %}"><img src="{{ MEDIA_URL }}noimage.png" alt="{{ item.art.title }}" class="img-fluid basket-image text-center rounded"></a>
-                                    {% endif %}
+                                <td>
+                                    <div class="text-center">
+                                        {% if item.art.image %}
+                                        <a href="{% url 'art_detail' item.art.id %}">
+                                            <img src="{{ item.art.image.url }}" alt="{{ item.art.title }}" 
+                                            class="basket-image rounded"></a>
+                                        {% else %}
+                                        <a href="{% url 'art_detail' item.art.id %}">
+                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ item.art.title }}" 
+                                            class="basket-image text-center rounded"></a>
+                                        {% endif %}
+                                    </div>
                                     
                                 </td>
                                 <td class="py-3">
@@ -56,13 +62,15 @@
                                 <td class="py-3">
                                     <p class="my-0 text-center"><strong>£{{ item.art.price }}</strong></p>
                                 </td>
-                                <td class="py-3 w-25">
+                                
+                                <td class="py-3">
                                     <form class = "form update-form" method = "POST" action="{% url 'adjust_basket' item.item_id %}" >
                                         {% csrf_token %}
-                                        <div class="form-group ">
+                                        <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <button class="decrement-qty btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                    <button class="decrement-qty btn btn-sm btn-black rounded-0" 
+                                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                         <span>
                                                             <i class="fas fa-minus fa-sm"></i>
                                                         </span>
@@ -71,8 +79,8 @@
                                                 </div>
                                                 
                                                 <input class="form-control form-control-sm qty_input" type="number" 
-                                                name="quantity" value="{{ item.quantity }}" min="1" max="99" 
-                                                data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99" 
+                                                    data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                                 <div class="input-group-append">
                                                     <button class="increment-qty btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                         <span>
@@ -90,6 +98,7 @@
                                     <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                      
                                 </td>
+                            
                                 <td class="py-3">
                                     <p class="my-0 text-center"><strong>£{{ item.art.price | calc_subtotal:item.quantity }}</strong></p>
                                 </td>
@@ -140,8 +149,8 @@
                 </div>
             {% else %}
                 <p class="text-center empty-basket-text mt-3">Your shopping basket is empty</p>
-                <div class="col-sm-10 col-md-8 offset-md-2 col-lg-6 offset-lg-3 my-auto">
-                    <img class="basket-image mt-5" src="/static/media/bluebellrainbow-home.jpg" alt="Bluebell rainbow image">
+                <div class="col-sm-10 col-md-8 offset-md-2 col-lg-6 offset-lg-3 text-center my-auto">
+                    <img class="empty-basket-image mt-5" src="/static/media/bluebellrainbow-home.jpg" alt="Bluebell rainbow image">
                 </div>
                 <div class="text-center mt-5">
                     <a href="{% url 'art' %}" class="account-action-btn"><i class="fas fa-arrow-left"></i> Keep Shopping</a>

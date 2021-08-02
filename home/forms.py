@@ -14,4 +14,4 @@ class ContactForm(forms.Form):
 		super().__init__(*args, **kwargs)
 
 		for field_name, field in self.fields.items():
-			field.widget.attrs['class'] = 'add-product-form'
+			field.widget.attrs['class'] = 'site-forms'

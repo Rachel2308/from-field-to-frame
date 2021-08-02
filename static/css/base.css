@@ -431,9 +431,7 @@ footer {
     cursor: pointer;
 }
 
-.basket-image {
-    max-width: 30%;
-}
+
 
 
 /* Blog Page CSS*/
@@ -572,6 +570,25 @@ footer {
     text-decoration: none;
 }
 
+/* Contact Form */
+
+.cancel-btn {
+
+    border-style: solid;
+    border-color: #567d46;
+    color: #567d46;
+    border-width: 2px; 
+    border-radius: 5px;
+    padding: 7px;
+    margin-top: 15px;
+}
+    
+.cancel-btn:hover {
+    background-color: #567d46;
+    color: white;
+    text-decoration: none;
+}
+
 
 /* Basket page */
 
@@ -611,9 +628,13 @@ footer {
 }
 
 .basket-image {
-    max-width: 40%;
-    display:block;
-    margin:auto;
+    width: 100px;
+    height: 100px;
+}
+
+.empty-basket-image {
+    width: 400px;
+    height: 400px;
 }
 
 th {
@@ -755,8 +776,15 @@ font-size: 1.3rem;
         font-size: 0.9rem;
     }
 
-    .furniture-img {
+    .furniture-img,
+    .empty-basket-image {
         width: 290px;
         height: 290px;
     }
+
+    .basket-image {
+        width: 50px;
+        height: 50px;
+    }
+
 }
