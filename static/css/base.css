@@ -330,12 +330,10 @@ footer {
     border-width: 2px; 
     border-radius: 5px;
     margin-top: 40px;
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
     margin-bottom: 40px;
     background-color: white;
-    max-width: 90%;
-    
 }
 
 .art-detail-info {
@@ -343,13 +341,14 @@ footer {
     border-color: #567d46;
     border-width: 2px; 
     border-radius: 5px;
-    margin-top: 40px;
-    margin-right: 40px;
-    margin-left: 40px;
-    margin-bottom: 40px;
     background-color: white;
-    max-width: 90%;
-
+    padding-top: 40px;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-bottom: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 40px;
 }
 
 .art-detail-title {
@@ -383,7 +382,6 @@ footer {
     border-width: 2px; 
     border-radius: 5px;
     padding: 5px;
-
 }
 
 .keep-shopping-button:hover {
@@ -405,7 +403,6 @@ footer {
     border-radius: 5px;
     padding: 5px;
     text-align: right;
-
 }
 
 .add-to-basket-button:hover {
@@ -533,9 +530,9 @@ footer {
     border-radius: 5px;
     margin-top: 40px;
     margin-right: 40px;
-    margin-left: 40px;
+    margin-left: 140px;
     margin-bottom: 40px;
-    max-width: 50%;  
+     
     padding-top: 15px; 
     padding-bottom: 15px; 
 }

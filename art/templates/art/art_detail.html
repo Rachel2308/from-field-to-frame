@@ -22,15 +22,16 @@
 {% endif %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-10 offset-1 col-md-5 art-detail-card text-center">
+        <div class="col-10 col-md-6 offset-md-3 col-lg-5 art-detail-card text-center">
             {% if art.image %}
+            <a class="image-link" href="{{ art.image.url }}">View larger image</a>
             <img class="card-img-top text-center" src="{{ art.image.url }}" alt="{{ art.title }}">
             {% else %}
             <img class="card-img-top text-center" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
             {% endif %}
         </div>
 
-        <div class="col-10 offset-1 col-md-5 art-detail-info">
+        <div class="col-10 col-md-6 offset-md-3 col-lg-5 h-100 art-detail-info">
             <div class="text-center art-detail-title"><strong>{{ art.title }}</strong></div>
             {% if request.user.is_superuser %}
             <div class="text-center mt-2">
@@ -72,31 +73,19 @@
                                         </button>
                                         <div>
                                         </div>
-                                        </div>
                                     </div>
                                 </div>
-                                <input type="submit" class="btn text-uppercase mt-3 add-to-basket-button"
-                                value="Add to Basket">
-                                </div>
-                                
-                                    
-                                    
-                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                
                             </div>
-
-
+                            <input type="submit" class="btn text-uppercase mt-3 add-to-basket-button"
+                                value="Add to Basket">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
             </form>
-
         </div>
-
     </div>
-
 </div>
-
 </div>
-
-
 <br>
 <div class="ml-5">
     <a href="{% url 'art' %}" class="account-action-btn"><i class="fas fa-arrow-left"></i> Back to all art</a>
