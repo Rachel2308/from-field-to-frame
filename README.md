@@ -25,7 +25,7 @@ This website was designed to be a e-commerce site for a local artist, Holly Dawe
     
     * **As someone interested in art**
         1. I want to be able to see the work that Holly does in order to learn more about her style
-        2. I want to be able to earn more through reading the blogs on the site
+        2. I want to be able to learn more through reading the blogs on the site
 
     * **As the owner of the store**
         1. I want to be able to sell my art through the site
@@ -100,7 +100,7 @@ The images used throughout the site are the artwork of Holly Dawes, and real exa
 ---
 ### Wireframes
 
-The wireframes for the site were created in balsamiq and uploaded as a pdf. They can be found as a pdf file [here.]
+The wireframes for the site were created in balsamiq and uploaded as a pdf. They can be found as a pdf file [here.](https://github.com/Rachel2308/from-field-to-frame/blob/master/from-field-to-frame-wireframes.pdf)
 
 ---
 
@@ -192,14 +192,7 @@ The contact page enables customers to contact the artist to get information, or 
 1. The blogs only render properly when they are uploaded with the html line breaks in place. This means that it would not be easy for the owner of the site to upload logs without basic coding knowledge. While this is not ideal, it is not possible to do this through django and any way of changing this would be outside the scope of this project.
 
 2. In future I would add in the ability to log in to the site with social media.
-
-
-
----
-
-### **Features Changed from Original Wireframe**
-
-### 1. 
+ 
 
 
 
@@ -220,7 +213,7 @@ The contact page enables customers to contact the artist to get information, or 
 6. [GitHub:](https://github.com/) 
     * GitHub is used to store the project's code after being pushed from Git.
 7. [Balsamiq:](https://balsamiq.com/) 
-    * Balsamiq was used to design the site and create [wireframes](documentation/images/Homework-Tracker-Wireframe-pdf.pdf).
+    * Balsamiq was used to design the site and create [wireframes](https://github.com/Rachel2308/from-field-to-frame/blob/master/from-field-to-frame-wireframes.pdf).
 8. [Heroku:](https://heroku.com) 
     * Heroku was used to host the deployed site
 9. [AWS:](https://aws.amazon.com/)
@@ -314,25 +307,3 @@ Thanks to
 * Katharine Allison, who has written the original content for the site
 * The slack community for help and support when things got tough
 
-
-
-
-Bugs
-
-Burger Menu jumped when clicked
-
-Fix
-
-Bootstrap spacing classes were causing the margins to change when the burger menu was open
-
-Sort function in Blogs home page caused account dropdown to show
-
-Fix
-
-FOund missing container-fluid div, problem solved once opening div added
-
-Contact and More info links on furniture pages - link only on margin on the first card
-
-Fix
-
-???
