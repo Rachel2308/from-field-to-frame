@@ -6,7 +6,7 @@
 
 This website was designed to be a e-commerce site for a local artist, Holly Dawes. As well as a site to sell her work, the site is also designed to promote her work upcycling furniture. 
 
-![Am I responsive]()
+![Am I responsive](documentation/images/MS4-am-i-responsive.jpg)
 
 ---
 
@@ -120,67 +120,67 @@ The site is responsive across all screen sizes. The layout of the pages change d
 ### 1. Log in page
 The log in page enables a user to log in to their account to update their details or access theor purchase history. Once logged in, users can checkout easier as their delivery information will be saved and autofilled into the checkout. If a user does not have an  account then there is a link to take them to the registration page.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-login.jpg)
 
 ### 2. Registration page
 The registration page enables new users to register for an account. From this page, existing customer can also go to the log in page.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-register.jpg)
 
 ### 3. Art page
 The art page shows all available art work, it's title and cost. There is a link for users to get more information on the piece. If the user is logged in as a superuser, the artwork can be deleted or edited from this page.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-art.jpg)
 
 ### 4. Art detail page
 The art detail page shows a larger image of the artwork, with a link to show an even larger image. The page also holds the description of the artwork, the price and the ability to add the artwork to their basket. If the user is logged in as a superuser, the artwork can be deleted or edited from this page. Users can sort the artwork by price to enable them to find pieces that suit their budget.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-art-detail.jpg)
 
 ### 5. Furniture page
 The furniture page shows all of the artist's previous furniture restoration project which allows people to see her skill and style. There is a link for users to get more information on the piece. If the user is logged in as a superuser, the furniture can be deleted or edited from this page.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-furniture.jpg)
 
 ### 6. Furniture detail page
 The furniture detail page shows a larger image of the piece, with a link to show an even larger image. The page also holds the description of the piece, and a link to contact the artist. If the user is logged in as a superuser, the piece can be deleted or edited from this page.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-furniture-detail.jpg)
 
 ### 7. Blog page
 The blog page shows all blogs on the site, with an image, published date, title and short description. They can click to read the full blog, and sort the blogs by published date. If the user is logged in as a superuser, the blog can be deleted or edited from this page.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-blog.jpg)
 
 ### 8. Blog detail page
 The blog detail page shows the full blog and published date.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-blog-detail.jpg)
 
 ### 9. Basket page
 The basket page shows a summary of their order. A small thumbnail image shows the art work chosen, and they can see the name, price, quantity, subtotal, whether there is a delivery charge and the order total. If the order is under the amount for free delivery, a red message will display telling them how much more they need to spend to get free delivery.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-basket.jpg)
 
 ### 10. Checkout page
 The checkout page will show the order summary and has a form to enter their details. If they have an account and have chosen to save their details, this form will be prefilled with their default delivery information.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-checkout.jpg)
 
 ### 11. Checkout success page
 Once a customer has successfully made a purchase, a page will display showing their order summary and delivery details. It will show their registered email address and advise them that an order confirmation email will be sent to their registered address.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-checkout-success.jpg)
 
 ### 12. Profile page
 On the user's profile page, the customer can find a record of their default delivery address, which they can update, and previous orders they have made. The order number acts as a link to view their previous order confirmation.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-profile.jpg)
 
 ### 13. Contact page
 The contact page enables customers to contact the artist to get information, or discuss a quote for a furniture restoration project.
 
-![](documentation/images/existing-feature)
+![](documentation/images/existing-feature-contact.jpg)
 
 
 
@@ -190,6 +190,9 @@ The contact page enables customers to contact the artist to get information, or 
 ### **Features Left To Implement**
 
 1. The blogs only render properly when they are uploaded with the html line breaks in place. This means that it would not be easy for the owner of the site to upload logs without basic coding knowledge. While this is not ideal, it is not possible to do this through django and any way of changing this would be outside the scope of this project.
+
+2. In future I would add in the ability to log in to the site with social media.
+
 
 
 ---
