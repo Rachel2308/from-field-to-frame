@@ -13,11 +13,11 @@
   ---
 
 * **Issue**
-
+    Toasts were not displaying on anything other than the basket page
 
 
     **Fix**
-
+    {{ block.super }} was missed off the templates. The BTT JS was overriding the base template JS so the toasts could not be displayed
 
 
 ---

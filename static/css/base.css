@@ -270,6 +270,10 @@ footer {
     text-decoration: none;
 }
 
+.signup {
+    width: 400px;
+}
+
 /* Art page CSS */
 
 .art-card {
@@ -410,6 +414,10 @@ footer {
 }
 
 .form-control {
+    width: 400px;
+}
+
+.form-contrrol-qty {
     width: 90px;
 }
 
@@ -783,6 +791,10 @@ font-size: 1.3rem;
 @media screen and (max-width: 450px) {
     .logo-font {
         font-size: 1.4rem !important;
+    }
+
+    .form-control {
+        width: 270px;
     }
 
     .list-inline-item {
