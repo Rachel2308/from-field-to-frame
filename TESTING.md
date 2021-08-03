@@ -23,19 +23,19 @@
 ---
 
 *   **Issue**
-
+    Having worked properly previously, the sign up form boxes were now very small. 
 
 
     **Fix**
-
+    From inspecting the front end, it turned out that the sign up form and quantity picker shared a class name. Once the quanitity picker size had been amended for smaller screens, this affected the sign up form. I changed the class name on the quantity picker so they could now be styled independently
 
 
 *   **Issue**
-
+    The cards on the art, furniture and blog pages overapped. This caused the buttons on those cards to not function. Chnging the CSS on these cards did not affect the margin.
 
 
     **Fix**
-
+    Once the card size was amended from h-100 to h-90 the issue was resolved.
 
 *   **Issue**
 
@@ -196,14 +196,27 @@ Each page of HTML and the CSS file were all checked. All results came back as co
 ### **Testing User Stories from User Experience (UX) Section**
 
 * **User Stories** 
-    * **As a member of the music team**
-       
+    * **As a customer looking for new art**
+        1. I want to be able to look through Holly's art to see her style
+        2. I want to be able to sort the art by price to be able to shop to my budget
+        3. I want to be able to register an account so that my default information can be saved for future purchased
+        4. I want to be able to see my previous purchases
 
-    * **As a Non-music team member of the chorus**
-        1. 
+    * **As a customer looking for someone to upcycle their furniture**
+        1. I want to be able to see Holly's previous work to get ideas and to see the quality of her work
+        2. I want to be able to contact Holly in order to discuss the project and get a quote
     
-    * **As the director of the chorus**
-        1. 
+    * **As someone interested in art**
+        1. I want to be able to see the work that Holly does in order to learn more about her style
+        2. I want to be able to earn more through reading the blogs on the site
+
+    * **As the owner of the store**
+        1. I want to be able to sell my art through the site
+        2. I want to be able to upload new pieces to the site, edit the existing ones, and delete any that are no longer available
+        3. I want to be able to showcase my previous upcycling projects
+        4. I want to be able to upload new furniture projects to the site, edit the existing ones, and delete any that I no longer want to feature
+        5. I want people to be able to contact me for information about my art or furniture projects
+        6. I want to be able to share my love of art though my blog
 ### **Further Testing**
 
 * The Website was tested on:

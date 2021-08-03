@@ -3,7 +3,6 @@
 
 [View the live project]()
 
-![The Belles of Three Spires Site Homework Tracker]()
 
 This website was designed to be a e-commerce site for a local artist, Holly Dawes. As well as a site to sell her work, the site is also designed to promote her work upcycling furniture. 
 
@@ -39,40 +38,41 @@ This website was designed to be a e-commerce site for a local artist, Holly Dawe
         
 ---
 
-## Database Model
+## Models
 
-MongoDB's non-relational database structure was ideal for this site as there were very few relationships between the collections on the site. 
+For this project I have used the following models:
 
-#### **Models**
-|**Key**|**Type**|**Notes**|
-|:-----|:-----|:-----|
-|_id|ObjectId||
-|section_name|string|The section that the homework task is being allocated to.|
-|song_name|string|The song that the homework relates to|
-|task_title|string|A brief title of the homework|
-|due_date|date|The date that the homework should be completed by|
-|task_description|string|A more in-depth write up of the allocated homework task|
-|created_by|string|The name of the person who has set the task|
+* **art**
+    1. title 
+    2. description
+    3. medium
+    4. product_type
+    5. price
 
-#### **Sections collection**
-|**Key**|**Type**|**Notes**|
-|:-----|:-----|:-----|
-|_id|ObjectId||
-|section_name|string|The section that the homework task is being allocated to.|
+* **furniture**
+    1. title
+    2. product
+    3. medium
+    4. description
+    5. image
 
-#### **Song collection**
-|**Key**|**Type**|**Notes**|
-|:-----|:-----|:-----|
-|_id|ObjectId||
-|song_name|string|The song that the homewrok task relates to|
+* **blog**
+    1. title
+    2. description
+    3. content
+    4. published date
+    5. image
 
-#### **User collection**
-|**Key**|**Type**|**Notes**|
-|:-----|:-----|:-----|
-|_id|ObjectId||
-|username|string|The username that the member registers with|
-|password|string|The password that the user chooses when they register|
-|is_musicteam|boolean|When members register they can select if they are a member of the music team or not. This then alters their user rights on some of the pages|
+
+* **profile**
+    1. full name
+    2. email
+    3. phone number
+    4. street address line 1
+    5. street address line 2
+    6. county
+    7. country
+    8. post code
 
 ---
 
@@ -108,13 +108,53 @@ The wireframes for the site were created in balsamiq and uploaded as a pdf. They
 
 ### Users
 
+People can use the site anonymously and still look at the art, her furniture projects and read the blogs. However if a user registers an account then their delivery details will be retained for future purchases, and also their profile will store the details of previous purchases. 
+
+The store owner will be logged in as a superuser and can add, edit, and delete artwork, furniture examples and blogs. 
 
 
 ### Existing Features
 
 The site is responsive across all screen sizes. The layout of the pages change depending on the size of screen. This has created a tidy and clean look on all screens.
 
-### 1. Log in / Registration Page
+### 1. Log in page
+The log in page enables a user to log in to their account to update their details or access theor purchase history. Once logged in, users can checkout easier as their delivery information will be saved and autofilled into the checkout. If a user does not have an  account then there is a link to take them to the registration page.
+
+### 2. Registration page
+The registration page enables new users to register for an account. From this page, existing customer can also go to the log in page.
+
+### 3. Art page
+The art page shows all available art work, it's title and cost. There is a link for users to get more information on the piece. If the user is logged in as a superuser, the artwork can be deleted or edited from this page.
+
+### 4. Art detail page
+The art detail page shows a larger image of the artwork, with a link to show an even larger image. The page also holds the description of the artwork, the price and the ability to add the artwork to their basket. If the user is logged in as a superuser, the artwork can be deleted or edited from this page. Users can sort the artwork by price to enable them to find pieces that suit their budget.
+
+### 5. Furniture page
+The furniture page shows all of the artist's previous furniture restoration project which allows people to see her skill and style. There is a link for users to get more information on the piece. If the user is logged in as a superuser, the furniture can be deleted or edited from this page.
+
+### 6. Furniture detail page
+The furniture detail page shows a larger image of the piece, with a link to show an even larger image. The page also holds the description of the piece, and a link to contact the artist. If the user is logged in as a superuser, the piece can be deleted or edited from this page.
+
+### 7. Blog page
+The blog page shows all blogs on the site, with an image, published date, title and short description. They can click to read the full blog, and sort the blogs by published date. If the user is logged in as a superuser, the blog can be deleted or edited from this page.
+
+### 8. Blog detail page
+The blog detail page shows the full blog and published date.
+
+### 9. Basket page
+The basket page shows a summary of their order. A small thumbnail image shows the art work chosen, and they can see the name, price, quantity, subtotal, whether there is a delivery charge and the order total. If the order is under the amount for free delivery, a red message will display telling them how much more they need to spend to get free delivery.
+
+### 10. Checkout page
+The checkout page will show the order summary and has a form to enter their details. If they have an account and have chosen to save their details, this form will be prefilled with their default delivery information.
+
+### 11. Checkout success page
+Once a customer has successfully made a purchase, a page will display showing their order summary and delivery details. It will show their registered email address and advise them that an order confirmation email will be sent to their registered address.
+
+### 12. Profile page
+On the user's profile page, the customer can find a record of their default delivery address, which they can update, and previous orders they have made. The order number acts as a link to view their previous order confirmation.
+
+### 13. Contact page
+The contact page enables customers to contact the artist to get information, or discuss a quote for a furniture restoration project.
 
 
 
