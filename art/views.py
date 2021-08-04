@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from .models import Art
 from .forms import ArtForm
 
-# Create your views here.
 
 def all_art(request):
     """View to return the art home page"""
@@ -30,8 +29,9 @@ def all_art(request):
         'art': art,
         'current_sorting': current_sorting,
     }
-    
+
     return render(request, 'art/art.html', context)
+
 
 def art_detail(request, art_id):
     """View to return the art detail page"""
@@ -41,7 +41,7 @@ def art_detail(request, art_id):
     context = {
         'art': art,
     }
-    
+
     return render(request, 'art/art_detail.html', context)
 
 
@@ -49,7 +49,8 @@ def art_detail(request, art_id):
 def add_art(request):
     """Add art to store"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you do not have permission to perform this function.')
+        messages.error(request,
+            'Sorry, you do not have permission to perform this function.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -59,8 +60,9 @@ def add_art(request):
             messages.success(request, 'Item added!')
             return redirect(reverse('art_detail', args=[art.id]))
         else:
-            messages.error(
-                request, 'Product could not be added, please check the form and try again.')
+            messages.error(request,
+            'Product could not be added,'
+            'please check the form and try again.')
     else:
         form = ArtForm()
 
@@ -76,7 +78,8 @@ def add_art(request):
 def edit_art(request, art_id):
     """ Edit a item of art in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you do not have permission to perform this function.')
+        messages.error(request,
+            'Sorry, you do not have permission to perform this function.')
         return redirect(reverse('home'))
 
     art = get_object_or_404(Art, pk=art_id)
@@ -87,7 +90,8 @@ def edit_art(request, art_id):
             messages.success(request, 'Successfully updated item!')
             return redirect(reverse('art_detail', args=[art.id]))
         else:
-            messages.error(request, 'Failed to update item. Please check form and try again.')
+            messages.error(request,
+                'Failed to update item. Please check form and try again.')
     else:
         form = ArtForm(instance=art)
         messages.info(request, f'You are editing {art.title}')
@@ -105,7 +109,8 @@ def edit_art(request, art_id):
 def delete_art(request, art_id):
     """ Delete an item from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you do not have permission to perform this function.')
+        messages.error(request,
+            'Sorry, you do not have permission to perform this function.')
         return redirect(reverse('home'))
     art = get_object_or_404(Art, pk=art_id)
     art.delete()

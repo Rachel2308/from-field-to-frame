@@ -44,7 +44,9 @@ def add_furniture(request):
             return redirect(reverse('furniture_detail', args=[furniture.id]))
         else:
             messages.error(
-                request, 'Furniture example could not be added, please check the form and try again.')
+                request, 
+                'Furniture example could not be added,' 
+                'please check the form and try again.')
     else:
         form = FurnitureForm()
 

@@ -56,6 +56,14 @@
     Found missing container-fluid div, problem solved once opening div added
   
   ---
+
+  *   **Issue**
+    Adding a piece of art with no image results in an error page. 
+
+    **Fix**
+    
+    The placement of the "View larger image" link was causing the error. Moved inside the if statement, issue resolved.
+ 
  **Unfixed Bugs**
 *   **Issue**
 
@@ -77,35 +85,55 @@
 * #### Homepage
     * **When logged in**
         
+        My Account drop down shows My Profile and Logout links
 
     * **When not logged in** 
 
-    * **When logged in as a superuser**
-        
+        My account drop down shows Register and Login links
+    
+    * **General**
 
+        Home page, header and footer work for all screen sizes down to 320px
+        
+* #### Login Page
+    * Login page enables a customer to log in to the store. 
+    * If the customer does not have an account then they can follow the register link to register an account.
+    * Once logged in, a toast pops up to say that login was successful. If they have something in their basket then the toast shows a summary of the basket contents in the toast.
 
 
 * #### **Contact Page**
-    * 
+    * All fields on the form need to be filled in for the form to submit. If the form is submitted without one of the fields completed, an error message pops up.
+    * If an invalid email address is entered, an error message pops up
+    * Hitting cancel after completing the form takes the user back to the homepage.
+    * Successfully submitting the contact form renders a message sent page with a link to return tp the home page.
+
    
 #### App - Art
 
 * #### **Art Home Page**
-    * 
+    * The sort by price button works to sort the artwork in both ascending and descending order.
+    * All links on the cards work and take the user to the correct art detail page. 
+    * Page renders well on all screen sizes
 
 
 * #### **Art Detail Page**
-    * 
+    * Correct image and details show on each page. 
+    * Back to art page enables user to return to the all art page to keep browsing.
+    * Quantity selector box works to change the number of pieces that are added to the basket. 
+    * Clicking add to basket adds the selected number of pieces to the basket and a toast pops up to advise of the addition to the basket.
 
 
 * #### **Add Art Page**
-    * 
+    * if invalid form is entered (tested through adding invalid price) - error message pops up advising user to correct the price
 
 * #### **Edit Art Page**
-    * 
+    * If invalid form is entered (tested through adding invalid price) - error message pops up advising user to correct the price
+    * New art cannot be added to the site if all required fields are not completed in the form.
+    * Successfully adding new art adds the piece to the database and routes the user to the art detail page for the artwork they have uploaded.
 
 * #### **Delete Art Page**
-    * 
+    * Art can be deleted from either the art home page or the art detail page. 
+    * Once deleted the user is routed back to the art home page.
 
 #### App - Furniture
 
@@ -146,6 +174,8 @@
 * #### **Delete Blog Page**
     * 
  
+* #### **Checkout Page**
+    * If user closes the page before form has been submitted but after the payment has been confirmed, the order will be created in the webhook. This was tested through commenting out the form submission to emulate a customer who closes the page before the form was submitted
 
 
    
@@ -268,10 +298,3 @@ user experience issues.
 
 Testing on checkout page. If user closes the page before form has been submitted but after the payment has been confirmed, the order will be created in the webhook. This was tested through commenting out the form submission to emulate a customer who closes the page before the form was submitted
 
-testing on add_product page
-
-if invalid form is entered (tested through adding invalid price) - error message pops up advising user to correct the price
-
-testing on edit_product page
-
-invlaid form is entered (tested through adding invalid price) - error message pops up advising user to correct the price

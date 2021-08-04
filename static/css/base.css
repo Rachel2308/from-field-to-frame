@@ -417,8 +417,12 @@ footer {
     width: 400px;
 }
 
-.form-contrrol-qty {
+.form-control-qty {
     width: 90px;
+}
+
+.form-control-basket {
+    width: 100px;
 }
 
 .add-to-basket-button{
@@ -767,6 +771,7 @@ font-size: 1.3rem;
 	.home-page-content {
         margin-top: 120px;
 }
+}
 
 @media screen and (max-width: 768px) {
 	.logo-font {
@@ -797,14 +802,22 @@ font-size: 1.3rem;
         width: 270px;
     }
 
+    .form-control-basket {
+        width: 50px;
+    }
+
     .list-inline-item {
         margin-top: -5px;
         margin-right: 50px;
         font-size: 0.9rem;
     }
 
-    .furniture-img,
-    .empty-basket-image, {
+    .furniture-img {
+        width: 290px;
+        height: 290px;
+    }
+
+    .empty-basket-image {
         width: 290px;
         height: 290px;
     }
