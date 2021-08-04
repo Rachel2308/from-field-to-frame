@@ -168,13 +168,12 @@ footer {
 }
 
 .social-footer-links {
-    
+    margin-top: 200px;
     vertical-align: middle;
+    font-size: 1.7rem;
 }
 
-.footer-links {
-    margin-top: 200px;
-}
+
 
 /* Home Page CSS */
 
@@ -790,7 +789,9 @@ font-size: 1.3rem;
 		font-size: 2rem !important;
 	}
 
-    
+    .decrement-qty, .increment-qty {
+        display: none;
+     }
 }
 
 @media screen and (max-width: 450px) {
@@ -831,4 +832,7 @@ font-size: 1.3rem;
         max-width: 290px;
     }
 
+    .decrement-qty, .increment-qty {
+        display: none;
+     }
 }

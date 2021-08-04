@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Furniture(models.Model):
     title = models.CharField(max_length=250, null=True, blank=True)
     product = models.CharField(max_length=250)

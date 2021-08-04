@@ -63,6 +63,13 @@
     **Fix**
     
     The placement of the "View larger image" link was causing the error. Moved inside the if statement, issue resolved.
+
+  *   **Issue**
+    Increment and decrement buttons were making the quantity select button reder poorly on smaller screens
+
+    **Fix**
+    
+    Added code to CSS to remove the - + buttons on medium and smaller screen sizes. It was also felt that they were not necessary on smaller screen sizes 
  
  **Unfixed Bugs**
 *   **Issue**

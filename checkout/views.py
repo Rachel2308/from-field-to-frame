@@ -14,6 +14,7 @@ from profiles.forms import UserProfileForm
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -70,14 +71,16 @@ def checkout(request):
 
                 except Art.DoesNotExist:
                     messages.error(request, (
-                        "One of the pieces of art in your basket couldn't be found in our store. "
+                        "One of the pieces of art in your basket "
+                        "couldn't be found in our store. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -95,7 +98,6 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-
 
         if request.user.is_authenticated:
             try:

@@ -27,7 +27,7 @@
         {% if art.image %}
 
         <img class="card-img-top art-detail-image text-center" src="{{ art.image.url }}" alt="{{ art.title }}">
-        <a class="image-link" href="{{ art.image.url }}">View larger image</a>
+        <a class="image-link" href="{{ art.image.url }}" target="_blank">View larger image</a>
         {% else %}
         <img class="card-img-top art-detail-image text-center" src="{{ MEDIA_URL }}noimage.png" alt="{{ art.title }}">
         {% endif %}

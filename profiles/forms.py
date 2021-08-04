@@ -3,6 +3,7 @@ from .models import UserProfile
 
 """From Code Institute's Boutique Ado Project """
 
+
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
