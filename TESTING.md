@@ -70,11 +70,15 @@
     **Fix**
     
     Added code to CSS to remove the - + buttons on medium and smaller screen sizes. It was also felt that they were not necessary on smaller screen sizes 
- 
- **Unfixed Bugs**
-*   **Issue**
 
-    On Firefox the social media icons in the footer do not align correctly. However as only 3.45% of people worldwide use firefox as their web browser, and as the issue is a cosmetic one and does not affect the functionality of the site, I have not prioritised fixing this.
+  *   **Issue**
+    On firefox, the 3 footer links were not aligned. This was only an issue on firefox and no other browser.
+
+    **Fix**
+    
+    A stray mt-3 tag had been left in the instagram link in the footer. This was only changing the margin on the firefoc and no other browser. Once this was removed they lined up on all browsers.
+ 
+
 
 
 
@@ -87,6 +91,8 @@
 ## **Manual User testing**
 
 * Testing has been undertaken on devices down to 320px.
+
+Throughout the project, testing was consistently undertaken on each feature that was added to the site, and any layout changes were checked on all devices to ensure the site was optimised for all screen sizes.
 
 #### App - Home
 * #### Homepage
@@ -202,18 +208,43 @@ were no syntax errors on any of the pages of the project. The python was checked
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator)
 * [PEP8 Checker](http://pep8online.com/)
 
-Each page of HTML and the CSS file were all checked. All results came back as completely clear of errors.
+Each page of HTML and the CSS file were all checked. All CSS results came back completely clear of errors.
 
 * **Results**
     * HTML
-        * []()
+        * [Home]() Done
+        * [Contact]() Done
+        * [Login]() Done
+        * [Register]() Done
+        * [All Art]() Done
+        * [Art Detail]() Done
+        * [Add Art]() Done
+        * [Edit Art]() Done
+        * [All Furniture]() Done
+        * [Furniture Detail]() Done
+        * [Add Furniture]() Done
+        * [Edit Furniture]() Done
+        * [All Blogs]()
+        * [Blog Detail]()
+        * [Add Blogs]()
+        * [Edit Blogs]()
+        * [Profile Page]()
+        * [Basket empty]()
+        * [Basket with products]()
+        * [Checkout]()
+        * [Checkout Success]()
 
         
     
         
 
       
-    * [CSS]()
+    * CSS
+        * [Base]()
+        * [Checkout]()
+        * [Profile]()
+
+
 
 
     * [Python]()

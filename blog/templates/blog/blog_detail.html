@@ -21,7 +21,7 @@
     </div>
 </div>
 <br>
-<h3 class="published-date text-center">Published {{ blog.date|date:'F jS Y'}}</h2>
+<h3 class="published-date text-center">Published {{ blog.date|date:'F jS Y'}}</h3>
     {% if request.user.is_superuser %}
     <div class="text-center">
         <a href="{% url 'edit_blog' blog.id %}" class="edit-delete-link">Edit</a>

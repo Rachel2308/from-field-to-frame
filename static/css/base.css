@@ -158,8 +158,6 @@ footer a:hover {
     margin-right: auto;
 }
 
-
-
 /* footer */
 
 footer {
@@ -172,8 +170,6 @@ footer {
     vertical-align: middle;
     font-size: 1.7rem;
 }
-
-
 
 /* Home Page CSS */
 
@@ -762,25 +758,40 @@ font-size: 1.3rem;
 
 /* Media Queries */
 
+@media screen and (min-width: 1394px) {
+	.logo-font {
+		font-size: 50px !important;
+	}
+	
+}
+
 @media screen and (max-width: 1393px) {
+	.logo-font {
+		font-size: 40px !important;
+	}
 	
 }
 
 @media screen and (max-width: 992px) {
 	.home-page-content {
         margin-top: 120px;
-}
+    }
 }
 
 @media screen and (max-width: 768px) {
 	.logo-font {
-		font-size: 30px !important;
+		font-size: 35px !important;
 	}
 }
 
-@media screen and (max-width: 655px) {
+@media screen and (max-width: 675px) {
 	.art-title {
         font-size: 1.2rem;
+    }
+
+    
+    .logo-font {
+        font-size: 30px !important;
     }
 }
 
