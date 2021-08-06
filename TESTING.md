@@ -243,7 +243,6 @@ were no syntax errors on any of the pages of the project. The python was checked
 Each page of HTML and the CSS file were all checked. All CSS results came back completely clear of errors.
 The HTML have some reported errors that have not been resolved.
 
-* The errors "Duplicate attribute id" and "Element p not allowed as child of element strong in this context." come from the django framework and not code written personally.
 * "An img element must have an alt attribute, except under certain conditions." This error is on the page to edit the blog, furniture and artwork pages, The image is not written on this page and is taken from the detail pages where the alt tags are in place.
 
 * **Results**
