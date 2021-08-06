@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 <div class="container-fluid">
@@ -8,5 +9,5 @@
             <hr class="w-50 mb-1 title-hr">
         </div>
   <p>Looks like this isn't the page you were looking for!</p>
-  <a class="error-link" href="{{ url ('home') }}">Go back to the home page</a>
+  <a class="error-link" href="{% url 'home' %}">Go back to the home page</a>
 {% endblock %}

@@ -248,7 +248,7 @@ From Field to Frame was created on Gitpod. Commits to git pushed the project to 
 
 How to clone From Field to Frame from GitHub
 
-Please note that this project will only run locally if am env.py file is set up containing the IP, PORT, SECRET_KEY, MONGO-URI and MONGO_DBNAME. 
+Please note that this project will only run locally if am env.py file is set up containing the IP, PORT and SECRET_KEY. 
 For security reasons these details will not be shared on this documentation. The env.py file should be added to your gitignore file or held within the Environment variables help on gitpod.io.
 
 1. Navigate to rachel2308/from-field-to-frame
