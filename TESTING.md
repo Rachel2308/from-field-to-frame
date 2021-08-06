@@ -127,6 +127,7 @@ Throughout the project, testing was consistently undertaken on each feature that
     * The sort by price button works to sort the artwork in both ascending and descending order.
     * All links on the cards work and take the user to the correct art detail page. 
     * Page renders well on all screen sizes
+    * If user is superuser, "Add item of art" button is displayed
 
 
 * #### **Art Detail Page**
@@ -134,15 +135,18 @@ Throughout the project, testing was consistently undertaken on each feature that
     * Back to art page enables user to return to the all art page to keep browsing.
     * Quantity selector box works to change the number of pieces that are added to the basket. 
     * Clicking add to basket adds the selected number of pieces to the basket and a toast pops up to advise of the addition to the basket.
+    * Clicking the view larger image link opens the full sized image in an new tab
 
 
 * #### **Add Art Page**
     * if invalid form is entered (tested through adding invalid price) - error message pops up advising user to correct the price
+    * New art cannot be added to the site if all required fields are not completed in the form.
+    * Successfully adding new art adds the piece to the database and routes the user to the art detail page for the artwork they have uploaded.
 
 * #### **Edit Art Page**
     * If invalid form is entered (tested through adding invalid price) - error message pops up advising user to correct the price
-    * New art cannot be added to the site if all required fields are not completed in the form.
-    * Successfully adding new art adds the piece to the database and routes the user to the art detail page for the artwork they have uploaded.
+    * Art cannot be edited if all required fields are not completed in the form.
+    * Successfully editing art edits the piece in the database and routes the user to the art detail page for the artwork they have edited.
 
 * #### **Delete Art Page**
     * Art can be deleted from either the art home page or the art detail page. 
@@ -151,52 +155,80 @@ Throughout the project, testing was consistently undertaken on each feature that
 #### App - Furniture
 
 * #### **Furniture Home Page**
-    * 
-
+    * If user is superuser, "Add example furniture project" button is displayed as well as edit and delete links.
+    * All links on the example furniture page work and take the user to the furniture detail page
+    * Page renders well on all screen sizes
+    * If user is superuser, "Add item of furniture" button is displayed
 
 * #### **Furniture Detail Page**
-    * 
+    * Contact us button links user to the contact form.
+    * Back to all furniture button works to return user to all furniture page
+    * Edit and delete links are displayed if logged in user is a superuser
+    * Clicking View larger image link opens the full size image in a new tab.
 
 
 * #### **Add Furniture Page**
-    * 
+    * New furniture cannot be added to the site if all required fields are not completed in the form.
+    * Successfully adding a new item of furniture adds the piece to the database and routes the user to the furniture detail page for the piece they have uploaded.
 
 * #### **Edit Furniture Page**
-    * 
+    * Furniture example cannot be edited if all required fields are not completed in the form.
+    * Successfully editing furniture edits the piece in the database and routes the user to the furniture detail page for the piece they have edited.
 
 * #### **Delete Furniture Page**
-    * 
+    * Furniture can be deleted from either the furniture home page or the furniture detail page. 
+    * Once deleted the user is routed back to the furniture home page.
     
 
 #### App - Blog
 
 * #### **Blog Home Page**
-    * 
+    * Page renders well in all screen sizes
+    * If logged in user is a super user, Add new blog button and edit and delete links are displayed
+    * Read more button takes user to the correct blog page
 
 
 * #### **Blog Detail Page**
-    * 
+    * Blog renders well on all screen sizes
+    * Back to all blogs button returns user to the blog home page
+    * If logged in user is a super user, Add new blog button and edit and delete links are displayed
 
 
 * #### **Add Blog Page**
-    * 
+    * New blogs cannot be added to the site if all required fields are not completed in the form.
+    * Successfully adding a new blog adds it to the database and routes the user to the blog page that they have uploaded.
 
 * #### **Edit Blog Page**
-    * 
+    * Blog cannot be edited if all required fields are not completed in the form.
+    * Successfully editing the blog edits the piece in the database and routes the user to the blog page that they have edited.
 
 * #### **Delete Blog Page**
-    * 
+    * Blog can be deleted from either the blog home page or the blog detail page. 
+    * Once deleted the user is routed back to the blog home page.
+
+#### App - Basket
+    * Items in basket correctly show on basket page
+    * If total is under £40, a delivery charge is added to the total and a message is displayed telling the user how much more they need to add to get free delivery
+    * Quantity picker correctly updates the basket, remve link works to remove item from basket
+    * Keep shopping link returns user to art page
+    * Secure Checkout link takes user to checkout page
  
+#### App - Checkout
+
 * #### **Checkout Page**
     * If user closes the page before form has been submitted but after the payment has been confirmed, the order will be created in the webhook. This was tested through commenting out the form submission to emulate a customer who closes the page before the form was submitted
+    * If user is logged in and has saved their details, these are prefilled in the customer details and delivery information form
+    * Order summary correctly shows on page
+    * When order is completed, user is routed to the checkout success page
 
+* #### **Checkout Success Page**    
+    * Page renders showing corrent order information
+    * Home button returns user to the home page
 
-   
-
- 
-
-
-
+#### App - Profile
+    * Profile page shows the users default delivery information
+    * Update delivery address button works correctly to update the users stored information
+    * Previous orders are recorded on the screen, order number acts as a link to the previous order confirmation
 ---
     
  ## **Code Validator**
@@ -209,47 +241,60 @@ were no syntax errors on any of the pages of the project. The python was checked
 * [PEP8 Checker](http://pep8online.com/)
 
 Each page of HTML and the CSS file were all checked. All CSS results came back completely clear of errors.
+The HTML have some reported errors that have not been resolved.
+
+* The errors "Duplicate attribute id" and "Element p not allowed as child of element strong in this context." come from the django framework and not code written personally.
+* "An img element must have an alt attribute, except under certain conditions." This error is on the page to edit the blog, furniture and artwork pages, The image is not written on this page and is taken from the detail pages where the alt tags are in place.
 
 * **Results**
     * HTML
-        * [Home]() Done
-        * [Contact]() Done
-        * [Login]() Done
-        * [Register]() Done
-        * [All Art]() Done
-        * [Art Detail]() Done
-        * [Add Art]() Done
-        * [Edit Art]() Done
-        * [All Furniture]() Done
-        * [Furniture Detail]() Done
-        * [Add Furniture]() Done
-        * [Edit Furniture]() Done
-        * [All Blogs]()
-        * [Blog Detail]()
-        * [Add Blogs]()
-        * [Edit Blogs]()
-        * [Profile Page]()
-        * [Basket empty]()
-        * [Basket with products]()
-        * [Checkout]()
-        * [Checkout Success]()
+        * [Home](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-index.pdf)
+        * [Contact](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-contact.pdf)
+        * [Login](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-login.pdf)
+        * [Register](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-register.pdf)
+        * [All Art](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-all-art.pdf)
+        * [Art Detail](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-art-detail.pdf)
+        * [Add Art](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-add-art.pdf)
+        * [Edit Art](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-edit-art.pdf)
+        * [All Furniture](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-furniture.pdf)
+        * [Furniture Detail](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-furniture-detail.pdf)
+        * [Add Furniture](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-add-furniture.pdf)
+        * [Edit Furniture](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-furniture-edit.pdf)
+        * [All Blogs](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-blogs.pdf)
+        * [Blog Detail](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-blog-detail.pdf)
+        * [Add Blogs](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-add-blog.pdf)
+        * [Edit Blogs](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-edit-blog.pdf)
+        * [Profile Page](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-profile.pdf)
+        * [Basket empty](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-basket-empty.pdf)
+        * [Basket with products](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-basket-products.pdf)
+        * [Checkout](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-checkout.pdf)
+        * [Checkout Success](https://github.com/Rachel2308/from-field-to-frame/blob/master/html-checker-checkout-success.pdf)
 
-        
-    
-        
-
-      
+              
     * CSS
-        * [Base]()
-        * [Checkout]()
-        * [Profile]()
+        * [Base](https://github.com/Rachel2308/from-field-to-frame/blob/master/css-checker-base.pdf)
+        * [Checkout](https://github.com/Rachel2308/from-field-to-frame/blob/master/css-checker-checkout.pdf)
+        * [Profile](https://github.com/Rachel2308/from-field-to-frame/blob/master/css-checker-profile.pdf)
 
 
 
 
-    * [Python]()
+    * Python
+        All linting errors have been fixed using PEP8 Online apart from the following:
+        
+        * Blog - widgets.py has one line which could not be shortened with making the code illegible
+        * Checkout - webhooks.py has one line which could not be shortened
+        * Furniture widget.py has one line cannot be shortened
 
 ---
+### **Testing General UX Expectations**
+
+* The site is consistant throughout the site, with the same styling of borders and buttons.
+* The colour scheme is used throughout the site, ensuring consistency on each page
+* The nav bar and footer are the same across all pages.
+* The site is easy to navigate with clearly labelled links and a simple design, enabling the art to be the primary focus.
+* The site adapts well to all screen sizes
+* The site uses allauth to provide a robust account system, while stripe is used to ensure payments made through the site are secure
 
 ### **Testing User Stories from User Experience (UX) Section**
 
@@ -257,8 +302,6 @@ Each page of HTML and the CSS file were all checked. All CSS results came back c
     * **As a customer looking for new art**
         1. I want to be able to look through Holly's art to see her style
         * The art home page enables people to browse her work on one page. This will give people chance to see her style and decide if they want to look into her work further.
-
-
         2. I want to be able to sort the art by price to be able to shop to my budget
         * The sort feature on the main art page enables customers to sort art by price, either high to low or low to high.
         ![](documentation/images/user-testing-art-sort.jpg)
@@ -332,7 +375,4 @@ user experience issues.
 ---
 
 
-
-
-Testing on checkout page. If user closes the page before form has been submitted but after the payment has been confirmed, the order will be created in the webhook. This was tested through commenting out the form submission to emulate a customer who closes the page before the form was submitted
 

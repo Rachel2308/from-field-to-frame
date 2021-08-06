@@ -2,6 +2,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from art.models import Art
 
+
 def basket_contents(request):
 
     basket_items = []

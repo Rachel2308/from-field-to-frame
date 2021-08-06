@@ -317,20 +317,12 @@ footer {
     color: #567d46 !important;
 }
 
-/* Art Detail Page CSS */
+.delete-link {
+    color: red !important;
+    cursor: pointer;
+}
 
-/*.art-detail-card {
-    border-style: solid;
-    border-color: #567d46;
-    border-width: 2px; 
-    border-radius: 5px;
-    margin-top: 40px;
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-bottom: 40px;
-    background-color: white;
-    
-}*/
+/* Art Detail Page CSS */
 
 .art-detail-image {
     border-style: solid;

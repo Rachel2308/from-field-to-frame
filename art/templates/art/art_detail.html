@@ -39,7 +39,7 @@
         {% if request.user.is_superuser %}
         <div class="text-center mt-2">
             <a href="{% url 'edit_art' art.id %}" class="edit-delete-link">Edit</a>
-            <a class="text-danger edit-delete-link" href="{% url 'delete_art' art.id %}">Delete</a>
+            <a class="delete-modal-trigger edit-delete-link delete-link" data-toggle="modal" data-target="#artDeleteModal_{{art.id}}">Delete</a>
         </div>
         {% endif %}
         <br>
@@ -91,6 +91,26 @@
 <div class="text-center">
     <a href="{% url 'art' %}" class="account-action-btn"><i class="fas fa-arrow-left"></i> Back to all art</a>
 </div>
+<!-- Art Delete Modal -->
+<div class="modal fade" id="artDeleteModal_{{art.id}}" tabindex="-1" aria-labelledby="artDeleteModalLabel-{{ forloop.counter }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="artDeleteModalLabel-{{ forloop.counter }}">Confirm deletion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            Are you sure you want to delete {{ art.title }}?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                <a class="btn btn-danger" href="{% url 'delete_art' art.id %}">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
 <!--based on code from Code Institute's Boutique Ado Project -->
 <div class="btt-button shadow-sm rounded-0 border">
     <a class="btt-link d-flex h-100">
@@ -106,6 +126,8 @@
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
+    $('#artDeleteModal').on('shown.bs.modal', function () {
+    $('#artDeleteModal').trigger('focus');
 </script>
 
 {% include 'art/includes/quantity_input_script.html' %}

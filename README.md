@@ -43,6 +43,7 @@ This website was designed to be a e-commerce site for a local artist, Holly Dawe
 For this project I have used the following models:
 
 * **art**
+   * This model holds all the information needed for the pieces of art for sale on the site
     1. title 
     2. description
     3. medium
@@ -50,6 +51,7 @@ For this project I have used the following models:
     5. price
 
 * **furniture**
+    * This model holds all the information needed for the example furniture projects on the site
     1. title
     2. product
     3. medium
@@ -57,6 +59,7 @@ For this project I have used the following models:
     5. image
 
 * **blog**
+    * This model holds all the information needed for the blog section on the site
     1. title
     2. description
     3. content
@@ -65,6 +68,7 @@ For this project I have used the following models:
 
 
 * **profile**
+    * This model holds the information needed for users profiles to be created and stored
     1. full name
     2. email
     3. phone number
@@ -182,7 +186,8 @@ The contact page enables customers to contact the artist to get information, or 
 
 ![](documentation/images/existing-feature-contact.jpg)
 
-
+### 14. Toasts
+The toasts on the site with give the user messaged in a pop up window in the top right of the screen. If the user has items in their shopping cart then these will also be listed in the toast.
 
 ---
 
@@ -220,9 +225,9 @@ The contact page enables customers to contact the artist to get information, or 
     * AWS was used to host the static files
 10. [Stripe](https://stripe.com/gb)
     * Stripe was used for the payments on the checkout page
-9. [Django](https://www.djangoproject.com/)
+11. [Django](https://www.djangoproject.com/)
     * The Django framework was used across the site
-9. Languages used
+12. Languages used
     * HTML
     * CSS
     * Python
@@ -306,4 +311,5 @@ Thanks to
 * Holly Dawes who is a real, and very talented artist. Her work has made this project a pleasure to work on
 * Katharine Allison, who has written the original content for the site
 * The slack community for help and support when things got tough
+* My mentor Brian, for being ready with help and tips on every call
 

@@ -77,31 +77,47 @@
                     </div>
                     <div class="card-footer bg-white pt-0 border-0">
                         
-                            <div class="col">
-                                <p class="lead mb-0 text-center font-weight-bold">£{{ art.price }}</p>
-
-                            
+                        <div class="col">
+                            <p class="lead mb-0 text-center font-weight-bold">£{{ art.price }}</p>                           
                         </div>
                     </div>
                     <div class="text-center ">
                     <a href="{% url 'art_detail' art.id %}" class="art-detail-button">More Info</a>
                     </div>
-                    {% if request.user.is_superuser %}
-                    {% if request.user.is_superuser %}
+                    {% if request.user.is_superuser %}                    
                     <div class="text-center mt-2">
                         <a href="{% url 'edit_art' art.id %}" class="edit-delete-link">Edit</a>
-                        <a class="text-danger edit-delete-link" href="{% url 'delete_art' art.id %}">Delete</a>
-                    </div>
-                    {% endif %}
+                        <a class="delete-modal-trigger edit-delete-link delete-link" data-toggle="modal" data-target="#artDeleteModal_{{art.id}}">Delete</a>
+                    </div>                    
                     {% endif %}
                 </div>
 
             </div>
-
+                    <!-- Art Delete Modal -->
+                    <div class="modal fade" id="artDeleteModal_{{art.id}}" tabindex="-1" aria-labelledby="artDeleteModalLabel-{{ forloop.counter }}" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content custom-modal">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="artDeleteModalLabel-{{ forloop.counter }}">Confirm deletion</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                Are you sure you want to delete {{ art.title }}?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                                    <a class="btn btn-danger" href="{% url 'delete_art' art.id %}">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             {% endfor %}
         </div>
     </div>
 </div>
+
 
 <!--based on code from Code Institute's Boutique Ado Project -->
 
@@ -121,6 +137,10 @@
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
+
+    $('#artDeleteModal').on('shown.bs.modal', function () {
+    $('#artDeleteModal').trigger('focus');
+});
 </script>
 
 {% endblock %}
