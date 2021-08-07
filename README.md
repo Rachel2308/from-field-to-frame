@@ -1,7 +1,7 @@
 # From Field to Frame
 ## A Milestone 4 Project by Rachel Sherlock
 
-[View the live project]()
+[View the live project](https://from-field-to-frame.herokuapp.com/)
 
 
 This website was designed to be a e-commerce site for a local artist, Holly Dawes. As well as a site to sell her work, the site is also designed to promote her work upcycling furniture. 
@@ -44,46 +44,50 @@ For this project I have used the following models:
 
 * **art**
    * This model holds all the information needed for the pieces of art for sale on the site
-    1. title 
-    2. description
-    3. medium
-    4. product_type
-    5. price
+
+            1. title 
+            2. description
+            3. medium
+            4. product_type
+            5. price
 
 * **furniture**
     * This model holds all the information needed for the example furniture projects on the site
-    1. title
-    2. product
-    3. medium
-    4. description
-    5. image
+
+            1. title
+            2. product
+            3. medium
+            4. description
+            5. image
 
 * **blog**
     * This model holds all the information needed for the blog section on the site
-    1. title
-    2. description
-    3. content
-    4. published date
-    5. image
+    
+            1. title
+            2. description
+            3. content
+            4. published date
+            5. image
 
 
 * **profile**
     * This model holds the information needed for users profiles to be created and stored
-    1. full name
-    2. email
-    3. phone number
-    4. street address line 1
-    5. street address line 2
-    6. county
-    7. country
-    8. post code
+
+            1. full name
+            2. email
+            3. phone number
+            4. street address line 1
+            5. street address line 2
+            6. county
+            7. country
+            8. post code
 
 ---
 
 
 ## Testing
 
-[View the full TESTING.md documentation](TESTING.md)
+[View the full TESTING.md documentation](https://github.com/Rachel2308/from-field-to-frame/blob/master/TESTING.md)
 
 ---
 

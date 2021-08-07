@@ -4,84 +4,100 @@
 
 * **Issue**
 
-    Buttons were not aligning on some of the allauth templates
+        Buttons were not aligning on some of the allauth templates
 
 
     **Fix**
     
-    Found to be an issue with getting the home button aligning with the input on some of the pages. Additional CSS class written to change the home button CSS when it was paired with an input instead of a button
+        Found to be an issue with getting the home button aligning with the input on some of the pages. Additional CSS class written to change the home button CSS when it was paired with an input instead of a button
 
 
   ---
 
 * **Issue**
     
-    Toasts were not displaying on anything other than the basket page
+        Toasts were not displaying on anything other than the basket page
 
 
     **Fix**
     
-    {{ block.super }} was missed off the templates. The BTT JS was overriding the base template JS so the toasts could not be displayed
+        {{ block.super }} was missed off the templates. 
+        The BTT JS was overriding the base template JS so 
+        the toasts could not be displayed
 
 
   ---
 
 *   **Issue**
     
-    Having worked properly previously, the sign up form boxes were now very small. 
+        Having worked properly previously, the sign up form boxes were now very small. 
 
 
     **Fix**
     
-    From inspecting the front end, it turned out that the sign up form and quantity picker shared a class name. Once the quanitity picker size had been amended for smaller screens, this affected the sign up form. I changed the class name on the quantity picker so they could now be styled independently
+        From inspecting the front end, it turned out that the sign up form and 
+        quantity picker shared a class name. Once the quanitity picker size had 
+        been amended for smaller screens, this affected the sign up form. I 
+        changed the class name on the quantity picker so they could now be 
+        styled independently
 
   ---
 
 *   **Issue**
     
-    The cards on the art, furniture and blog pages overapped. This caused the buttons on those cards to not function. Chnging the CSS on these cards did not affect the margin.
+        The cards on the art, furniture and blog pages overapped. 
+        This caused the buttons on those cards to not function. 
+        Changing the CSS on these cards did not affect the margin.
 
 
     **Fix**
     
-    Once the card size was amended from h-100 to h-90 the issue was resolved.
+        Once the card size was amended from h-100 to h-90 the issue was resolved.
   ---
   
 *   **Issue**
     
-    Sort function in Blogs home page caused account dropdown to show
+        Sort function in Blogs home page caused account dropdown to show
 
 
     **Fix**
     
-    Found missing container-fluid div, problem solved once opening div added
+        Found missing container-fluid div, problem solved once opening div added
   
   ---
 
-  *   **Issue**
-    Adding a piece of art with no image results in an error page. 
+*   **Issue**
+
+        Adding a piece of art with no image results in an error page. 
+
 
     **Fix**
-    
-    The placement of the "View larger image" link was causing the error. Moved inside the if statement, issue resolved.
+
+        The placement of the "View larger image" link was causing the error. 
+        Moved inside the if statement, issue resolved.
 
 ---
 
-  *   **Issue**
-    Increment and decrement buttons were making the quantity select button reder poorly on smaller screens
+*   **Issue**
+
+            Increment and decrement buttons were making the quantity select 
+            button render poorly on smaller screens
 
     **Fix**
     
-    Added code to CSS to remove the - + buttons on medium and smaller screen sizes. It was also felt that they were not necessary on smaller screen sizes 
+        Added code to CSS to remove the - + buttons on medium and smaller 
+        screen sizes. It was also felt that they were not necessary on smaller 
+        screen sizes 
 
 ---
 
-  *   **Issue**
-    On firefox, the 3 footer links were not aligned. This was only an issue on firefox and no other browser.
+*   **Issue**
+
+        On firefox, the 3 footer links were not aligned. This was only an issue on firefox and no other browser.
 
     **Fix**
     
-    A stray mt-3 tag had been left in the instagram link in the footer. This was only changing the margin on the firefoc and no other browser. Once this was removed they lined up on all browsers.
+        A stray mt-3 tag had been left in the instagram link in the footer. This was only changing the margin on the firefoc and no other browser. Once this was removed they lined up on all browsers.
 
 ---
 
@@ -90,13 +106,9 @@
 
     **Fix**
     
-    I had made a mistake in the templates for the error pages and used the link <a class="error-link" href="{{ url ('home') }}">Go back to the home page</a> instead of <a class="error-link" href="{% url 'home' %}">Go back to the home page</a>
-
-
-
-
-
-
+        I had made a mistake in the templates for the error pages and used the link 
+        <a class="error-link" href="{{ url ('home') }}">Go back to the home page</a> 
+        instead of <a class="error-link" href="{% url 'home' %}">Go back to the home page</a>
 
 ---
 
@@ -106,7 +118,7 @@
 
 Throughout the project, testing was consistently undertaken on each feature that was added to the site, and any layout changes were checked on all devices to ensure the site was optimised for all screen sizes.
 
-#### App - Home
+### **App - Home**
 * #### Homepage
     * **When logged in**
         
@@ -133,7 +145,7 @@ Throughout the project, testing was consistently undertaken on each feature that
     * Successfully submitting the contact form renders a message sent page with a link to return tp the home page.
 
    
-#### App - Art
+### **App - Art**
 
 * #### **Art Home Page**
     * The sort by price button works to sort the artwork in both ascending and descending order.
@@ -164,7 +176,7 @@ Throughout the project, testing was consistently undertaken on each feature that
     * Art can be deleted from either the art home page or the art detail page. 
     * Once deleted the user is routed back to the art home page.
 
-#### App - Furniture
+### **App - Furniture**
 
 * #### **Furniture Home Page**
     * If user is superuser, "Add example furniture project" button is displayed as well as edit and delete links.
@@ -192,7 +204,7 @@ Throughout the project, testing was consistently undertaken on each feature that
     * Once deleted the user is routed back to the furniture home page.
     
 
-#### App - Blog
+### **App - Blog**
 
 * #### **Blog Home Page**
     * Page renders well in all screen sizes. The cards end up different sizes due to the differing amount of content in them, however this was preferred over having a varied amount of white space which would have been necessary if the cards were to be all the same size.
@@ -218,14 +230,14 @@ Throughout the project, testing was consistently undertaken on each feature that
     * Blog can be deleted from either the blog home page or the blog detail page. 
     * Once deleted the user is routed back to the blog home page.
 
-#### App - Basket
-    * Items in basket correctly show on basket page
-    * If total is under £40, a delivery charge is added to the total and a message is displayed telling the user how much more they need to add to get free delivery
-    * Quantity picker correctly updates the basket, remve link works to remove item from basket
-    * Keep shopping link returns user to art page
-    * Secure Checkout link takes user to checkout page
+### **App - Basket**
+* Items in basket correctly show on basket page
+* If total is under £40, a delivery charge is added to the total and a message is displayed telling the user how much more they need to add to get free delivery
+* Quantity picker correctly updates the basket, remve link works to remove item from basket
+* Keep shopping link returns user to art page
+* Secure Checkout link takes user to checkout page
  
-#### App - Checkout
+### **App - Checkout**
 
 * #### **Checkout Page**
     * If user closes the page before form has been submitted but after the payment has been confirmed, the order will be created in the webhook. This was tested through commenting out the form submission to emulate a customer who closes the page before the form was submitted
@@ -237,10 +249,10 @@ Throughout the project, testing was consistently undertaken on each feature that
     * Page renders showing corrent order information
     * Home button returns user to the home page
 
-#### App - Profile
-    * Profile page shows the users default delivery information
-    * Update delivery address button works correctly to update the users stored information
-    * Previous orders are recorded on the screen, order number acts as a link to the previous order confirmation
+### App - Profile
+* Profile page shows the users default delivery information
+* Update delivery address button works correctly to update the users stored information
+* Previous orders are recorded on the screen, order number acts as a link to the previous order confirmation
 ---
     
  ## **Code Validator**
