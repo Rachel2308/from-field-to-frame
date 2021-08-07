@@ -251,31 +251,14 @@ How to clone From Field to Frame from GitHub
 Please note that this project will only run locally if am env.py file is set up containing the IP, PORT and SECRET_KEY. 
 For security reasons these details will not be shared on this documentation. The env.py file should be added to your gitignore file or held within the Environment variables help on gitpod.io.
 
-1. Navigate to rachel2308/from-field-to-frame
-2. Click on the green Code button
-3. Select the code dropdown button beside the Gitpod button
-4. Copy the URL listed.
-5. Start up your IDE and navigate to the file location.
-6. To clone, copy this code and input it into your terminal:
+    1. Navigate to rachel2308/from-field-to-frame
+    2. Click on the green Code button
+    3. Select the code dropdown button beside the Gitpod button
+    4. Copy the URL listed.
+    5. Start up your IDE and navigate to the file location.
+    6. To clone, copy this code and input it into your terminal:
 
 https://github.com/Rachel2308/from-field-to-frame
-
-### **Heroku**
-
-**Deployment to Heroku**
-
-**Create the application:**
-
-    * Login in to heroku.com
-    * Click on New, and Create new app
-    * Enter your app name
-    * Select the region that is closest to you
-
-**Connect to you GitHub repository**
-
-    * Click Deploy and select GitHub - Connect to GitHub
-    * Enter your repository name and search
-    * Click Connect on the correct repository
 
 **Set Your Environment Variables**
 
@@ -283,15 +266,204 @@ Go to settings, and within Config Vars enter the following
 
     * IP: 0.0.0.0
     * PORT: 5000
-    * MONGO_DBNAME: (enter the database name that you are connecting to)
-    * MONGO_URI: (enter your mongo uri. This is found by going to clusters> connect> connect to your application and entering your passwords and dbname within the link)
     * SECRET_KEY: (This is a secret password that must be very secure.)
+    * STRIPE_PUBLIC_KEY (From stripe.com)
+    * STRIPE_SECRET_KEY (From stripe.com, secret password that must be kept secure)
+    * STRIPE_WH_KEY (Webhook key from stripe.com, secret password that must be kept secure)
 
-**Enable Automatic Deploys**
+To get your Stripe keys, login to Stripe and under the Developers tab look for the 'Publishable Key' and 'Secret Key' under API keys
+
+The webhook secret key is found under Webhooks once you have created an endpoint, which should be set to receive all events and match this url structure:
+
+<site base url/checkout/wh/>
+
+A different endpoint will need to be created for both the local and deployed site. 
+
+**Install the app requirements**
+
+    pip3 install requirements.txt
+
+**Apply database migrations**
+
+    python3 manage.py migrate
+
+**Create a new superuser to access admin features**
+
+    python manage.py createsuperuser
+
+**Run the app locally**
+
+    python manage.py runserver
+
+## **Heroku**
+
+**1. Deployment to Heroku**
+
+**2. Create the application:**
+
+    * Login in to heroku.com
+    * Click on New, and Create new app
+    * Enter your app name
+    * Select the region that is closest to you
+
+**3. Connect to your GitHub repository**
+
+    * Click Deploy and select GitHub - Connect to GitHub
+    * Enter your repository name and search
+    * Click Connect on the correct repository
+
+**4. Log in to Heroku via the CLI**
+
+    heroku login -i
+
+**5. Create a new superuser and fill in your details:**
+    
+    python manage.py createsuperuser
+
+**6. Install gunicorn**
+
+    pip3 install gunicorn
+
+**7. Freeze the app's requirements**
+
+    pip3 freeze > requirements.txt
+
+**8. Create a Procfile and include the following code**
+
+    web: gunicorn moose_juice.wsgi:application
+
+**9. Temporarily disable Heroku's static file collection**
+
+    heroku config:set DISABLE_COLLECTSTATIC=1 --app from-field-to-frame
+
+**10. Add the hostname of your Heroku app to settings.py**
+    ALLOWED_HOSTS = ['from-field-to-frame.herokuapp.com', 'localhost']
+ 
+
+**11. Add config Vars to Heroku**
+
+In heroku go to settings, reveal config vars and enter the following:
+
+
+|**Key**|**Value**|
+|:-----|:-----|
+|AWS_ACCESS_KEY_ID| enter your variable here |
+|AWS_SECRET_ACCESS_KEY|enter your variable here|
+|DATABASE_URL|added by Heroku when Postgres installed|
+|DISABLE_COLLECTSTATIC|this variable will be deleted later|
+|EMAIL_HOST_PASS|	enter your variable here|
+|EMAIL_HOST_USER|	enter your variable here|
+|SECRET_KEY|	enter your variable here|
+|STRIPE_PUBLIC_KEY|	enter your variable here|
+|STRIPE_SECRET_KEY|	enter your variable here|
+|STRIPE_WH_SECRET|	enter your variable here|
+|USE_AWS|	True|
+
+**12. Enable Automatic Deploys**
 
     * Go to the deploy tab
-    * Within the automatic deploys section, choose the branch that you want to deploy from and select Enable Automatic Deploys. 
+    * Within the automatic deploys section, choose the branch that you want to deploy from and select Enable Automatic Deploys.
 
+**13. Launch deployed site**
+
+    Click on Open App from the app page within Heroku to launch your deployed site.
+
+---
+
+## **Setting up an S3 bucket**
+
+1. Create an Amazon AWS account**
+2. Search for S3 and create a new bucket
+    * Allow public access
+
+3. Under Properties > Static website hosting
+    * Enable
+    * Index.html as index document
+    * Save
+
+4. Under Permissions > CORS use:
+
+                [
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+        ]
+
+5. Under Permissions > Bucket Policy:
+    * Generate Bucket Policy and save Bucket ARN
+    * Type of Policy is S3 Bucket Policy
+    * Enter * for Principal
+    * Enter ARN previously copied
+    * Add Statement
+    * Generate Policy
+    * Copy Policy JSON Document
+    * Paste policy into the Edit Bucket policy on the previous tab
+    * Save your changes
+
+6. Under Access Control List (ACL):
+    * Under Everyone (public access), tick List
+    * Acknowledge that everyone will be able to access the Bucket
+    * Save changes
+
+
+## **Setting up AWS IAM (Identity and Access Management)**
+
+1. From the IAM dashboard within AWS, click User Groups:
+    * Create new group and name it e.g. manage-from-field-to-frame
+    * Click through but do not add a policy
+    * Create Group
+
+2. Select Policies:
+    * Create the policy
+    * Under JSON tab, click Import managed policy
+    * Select AmazongS3FullAccess
+    * Edit the resource including the Bucket ARN from the Bucket Policy:
+
+			"Resource": [
+			                "arn:aws:s3:::from-field-to-frame",
+			                "arn:aws:s3:::from-field-to-frame/*"
+            ]
+    * Click next step > review policy
+    * Name the policy e.g from-field-to-frame-policy
+    * Create the policy
+
+3. Return to User Groups and select the group created earlier
+    * Under Permissions > Add permissions, select Attach Policies and select the one you have just created
+    * Add permissions
+
+4. Under Users:
+    * Choose a user name e.g. from-field-to-frame-staticfiles-user
+    * Access type is Programmatic access
+    * Click Next
+    * Add user to the Group you have just created
+    * Click Next and Create User
+
+5. Download the .csv which contains the access key and secret access key. This cannot be downloaded again so ensure that it is saved securely
+
+## **Commecting Django to S3** 
+1. Install boto3 and django-storages
+
+        * pip3 install boto3
+        * pip3 install django-storages
+        * pip3 freeze > requirements.txt
+
+2. In Heroku CVARS, under settings, add the following values from the .csv file that was downloaded in the previous step.
+
+        * AWS_ACCESS_KEY_ID
+        * AWS_SECRET_ACCESS_KEY
+
+3. Delete the DISABLE_COLLECTSTATIC variable from your CVARS in Heroku, and deploy your Heroku app
+
+4. Once the S3 bucket is set up, create a new folder called media (at the same level as the static folder). Any media files required by your site can be uploaded here. Ensure they are pulicly accessible under permissions within the S3 bucket.
 
 ---
 
