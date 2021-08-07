@@ -1,130 +1,116 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
-{% block content %}
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="title-text page-title">Our Blogs</h2>
-            <hr class="w-50 mb-1 title-hr">
-        </div>
-    </div>
+<div class="container header-container">
+   <div class="row">
+      <div class="col"></div>
+   </div>
 </div>
-
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+   <div class="row">
+      <div class="col text-center mt-3">
+         <h2 class="title-text page-title">Our Blogs</h2>
+         <hr class="w-50 mb-1 title-hr">
+      </div>
+   </div>
+</div>
 {% if request.user.is_authenticated %}
 {% if request.user.is_superuser %}
-    <div class="text-center mt-2">
-        <a href="{% url 'add_blog' %}" class="account-action-btn">Add New Blog Article</a>   
-    </div>          
+<div class="text-center mt-2">
+   <a href="{% url 'add_blog' %}" class="account-action-btn">Add New Blog Article</a>   
+</div>
 {% endif %}            
 {% endif %} 
-
-    <div class="row">
-        <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center sort-box">
-            <a href="#" id="all-blog-sort" class="sort-link" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Sort by Date <i class="fas fa-angle-down"></i>
-            </a>
-            <div class="dropdown-menu sort-dropdown-box border-0" aria-labelledby="all-blog-sort">
-                <a href="{% url 'blog' %}?sort=date&direction=desc" class="dropdown-item sort-text sort-link">Most
-                    Recent</a>
-                <a href="{% url 'blog' %}?sort=date&direction=asc" class="dropdown-item sort-text sort-link">Oldest</a>
-            </div>
-        </div>
-    </div>
-
-
-
+<!--Dropdown to sort blogs by published date-->
 <div class="row">
-    <div class="product-container col-10 offset-1">
-        <div class="row mt-1 mb-2">
-        <div class="row">
+   <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4 text-center sort-box">
+      <a href="#" id="all-blog-sort" class="sort-link" data-toggle="dropdown" aria-haspopup="true"
+         aria-expanded="false">
+      Sort by Date <i class="fas fa-angle-down"></i>
+      </a>
+      <div class="dropdown-menu sort-dropdown-box border-0" aria-labelledby="all-blog-sort">
+         <a href="{% url 'blog' %}?sort=date&direction=desc" class="dropdown-item sort-text sort-link">Most
+         Recent</a>
+         <a href="{% url 'blog' %}?sort=date&direction=asc" class="dropdown-item sort-text sort-link">Oldest</a>
+      </div>
+   </div>
+</div>
+<!--For loop to show all blogs on the site-->
+<div class="row">
+   <div class="product-container col-10 offset-1">
+      <div class="row mt-1 mb-2">
+         <div class="row">
             {% for blog in blog %}
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card art-card h-90">
-                        {% if blog.image %}
-                            <a href="{% url 'blog_detail' blog.id %}">
-                                <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">
-                            </a>
-                            {% else %}
-                            <a href="{% url 'blog_detail' blog.id %}">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.title }}">
-                            </a>
-                            {% endif %}
-                            <div class="pb-0">
-                                <a href="{% url 'blog_detail' blog.id %}" class="mb-5 card-text text-center"><h4>{{ blog.title }}</h4></a>
-                                <h5 class="ml-2">Published on {{ blog.date|date:'j M Y' }}</h5>
-                                <p class="ml-2">{{ blog.description|striptags }}</p>
-                            </div>
-
-                            <div class="card-footer bg-white pt-0 border-0 text-center">
-                                
-                                    <a href="{% url 'blog_detail' blog.id %}" class="info-button">Read More</a>
-                    
-                            </div>
-                            
-                            {% if request.user.is_superuser %}
-                            <div class="text-center">
-                                <a href="{% url 'edit_blog' blog.id %}" class="edit-delete-link">Edit</a>
-                                <a class="delete-modal-trigger edit-delete-link delete-link" data-toggle="modal" data-target="#blogDeleteModal_{{blog.id}}">Delete</a>
-                            </div>
-                            {% endif %}
-                            
-                    </div>
-                </div>
-                    <!-- Blog Delete Modal -->
-<div class="modal fade" id="blogDeleteModal_{{blog.id}}" tabindex="-1" aria-labelledby="blogDeleteModalLabel-{{ forloop.counter }}" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content custom-modal">
-            <div class="modal-header">
-                <h5 class="modal-title" id="blogDeleteModalLabel-{{ forloop.counter }}">Confirm deletion</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+               <div class="card art-card h-90">
+                  {% if blog.image %}
+                  <a href="{% url 'blog_detail' blog.id %}">
+                  <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                  </a>
+                  {% else %}
+                  <a href="{% url 'blog_detail' blog.id %}">
+                  <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.title }}">
+                  </a>
+                  {% endif %}
+                  <div class="pb-0">
+                     <a href="{% url 'blog_detail' blog.id %}" class="mb-5 card-text text-center">
+                        <h4>{{ blog.title }}</h4>
+                     </a>
+                     <h5 class="ml-2">Published on {{ blog.date|date:'j M Y' }}</h5>
+                     <p class="ml-2">{{ blog.description|striptags }}</p>
+                  </div>
+                  <div class="card-footer bg-white pt-0 border-0 text-center">
+                     <a href="{% url 'blog_detail' blog.id %}" class="info-button">Read More</a>
+                  </div>
+                  {% if request.user.is_superuser %}
+                  <div class="text-center">
+                     <a href="{% url 'edit_blog' blog.id %}" class="edit-delete-link">Edit</a>
+                     <a class="delete-modal-trigger edit-delete-link delete-link" data-toggle="modal" data-target="#blogDeleteModal_{{blog.id}}">Delete</a>
+                  </div>
+                  {% endif %}
+               </div>
             </div>
-            <div class="modal-body">
-            Are you sure you want to delete {{ blog.title }}?
+            <!-- Blog Delete Modal -->
+            <div class="modal fade" id="blogDeleteModal_{{blog.id}}" tabindex="-1" aria-labelledby="blogDeleteModalLabel-{{ forloop.counter }}" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content custom-modal">
+                     <div class="modal-header">
+                        <h5 class="modal-title" id="blogDeleteModalLabel-{{ forloop.counter }}">Confirm deletion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                     </div>
+                     <div class="modal-body">
+                        Are you sure you want to delete {{ blog.title }}?
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                        <a class="btn btn-danger" href="{% url 'delete_blog' blog.id %}">Delete</a>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-                <a class="btn btn-danger" href="{% url 'delete_blog' blog.id %}">Delete</a>
-            </div>
-        </div>
-    </div>
-</div>
             {% endfor %}
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
 </div>
+<!--based on code from Code Institute's Boutique Ado Project -->
+<div class="btt-button shadow-sm rounded-0 border">
+   <a class="btt-link d-flex h-100">
+   <i class="fas fa-arrow-up mx-auto my-auto"></i>
+   </a>
 </div>
-
-    <!--based on code from Code Institute's Boutique Ado Project -->
-
-    <div class="btt-button shadow-sm rounded-0 border">
-        <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up mx-auto my-auto"></i>
-        </a>
-    </div>
-    
-    {% endblock %}
-    
-    {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        $('.btt-link').click(function (e) {
-            window.scrollTo(0, 0)
-        })
-        $('#artDeleteModal').on('shown.bs.modal', function () {
-        $('#artDeleteModal').trigger('focus');
-    </script>
-    
-    {% endblock %}
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+   $('.btt-link').click(function (e) {
+       window.scrollTo(0, 0)
+   })
+   $('#artDeleteModal').on('shown.bs.modal', function () {
+   $('#artDeleteModal').trigger('focus');
+</script>
+{% endblock %}

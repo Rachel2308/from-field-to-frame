@@ -1,28 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
-{% block content %}
-
-<div class="row">
-    <div class="col text-center mt-3">
-        <h2 class="title-text page-title">Message Sent!</h2>
-        <hr class="w-50 mb-1 title-hr">
-    </div>
+<div class="container header-container">
+   <div class="row">
+      <div class="col"></div>
+   </div>
 </div>
-
+{% endblock %}
+{% block content %}
+<div class="row">
+   <div class="col text-center mt-3">
+      <h2 class="title-text page-title">Message Sent!</h2>
+      <hr class="w-50 mb-1 title-hr">
+   </div>
+</div>
+<!--Message sent message-->
 <h3 class="sent-message-text text-center">Your message has been sent, Holly will aim to get back to you within 24 hours</h3>
 <div class="text-center">
-    <a class ="btn account-action-btn" href="{% url 'home' %}">Home</a>
+   <a class ="btn account-action-btn" href="{% url 'home' %}">Home</a>
 </div>
-
-
 {% endblock %}

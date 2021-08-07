@@ -1,170 +1,133 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
-  <head>
-
-    {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
-
-    {% block extra_meta %}
-    {% endblock %}
-
-    {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="icon" type="image/jpg" href="{% static 'media/F2F-favicon.jpg' %}" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Niconne&display=swap" rel="stylesheet">
-    {% endblock %}
-
-    {% block extra_css %}
-    {% endblock %}
-
-    {% block corejs %}
-        <script src="https://kit.fontawesome.com/a2015cea33.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <!-- Stripe -->
-        <script src="https://js.stripe.com/v3/"></script>
-
-    {% endblock %}
-
-    {% block extra_js %}
-    {% endblock %}
-
-    <title>From Field to Frame {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
-      
-    <header class="container-fluid fixed-top">
-        <div class="row">
-            
-
+   <head>
+      {% block meta %}
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      {% endblock %}
+      {% block extra_meta %}
+      {% endblock %}
+      {% block corecss %}
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="icon" type="image/jpg" href="{% static 'media/F2F-favicon.jpg' %}" />
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Niconne&display=swap" rel="stylesheet">
+      {% endblock %}
+      {% block extra_css %}
+      {% endblock %}
+      {% block corejs %}
+      <script src="https://kit.fontawesome.com/a2015cea33.js" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <!-- Stripe -->
+      <script src="https://js.stripe.com/v3/"></script>
+      {% endblock %}
+      {% block extra_js %}
+      {% endblock %}
+      <title>From Field to Frame {% block extra_title %}{% endblock %}</title>
+   </head>
+   <body>
+      <header class="container-fluid fixed-top">
+         <div class="row">
             <div class="col-3 my-1 d-flex flex-row">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <div class="container-fluid ">
-                            <div>
-                                <ul class="navbar-nav">
-                                    <li><a href="{% url 'art' %}" class="mr-3">Art</a></li>
-                                    <li><a href="{% url 'furniture' %}" class="mr-3">Furniture</a></li>
-                                    <li><a href="{% url 'blog' %}" class="mr-3">Blog</a></li>
-                                    <li><a href="{% url 'contact' %}" class="mr-3">Contact</a></li>
-                                    <li><a href="{% url 'profile' %}" class="mr-3 d-block d-lg-none">Profile</a></li>
-                                </ul>
-                            </div>
+               <nav class="navbar navbar-expand-lg navbar-light">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                     <div class="container-fluid ">
+                        <div>
+                           <ul class="navbar-nav">
+                              <li><a href="{% url 'art' %}" class="mr-3">Art</a></li>
+                              <li><a href="{% url 'furniture' %}" class="mr-3">Furniture</a></li>
+                              <li><a href="{% url 'blog' %}" class="mr-3">Blog</a></li>
+                              <li><a href="{% url 'contact' %}" class="mr-3">Contact</a></li>
+                              <li><a href="{% url 'profile' %}" class="mr-3 d-block d-lg-none">Profile</a></li>
+                           </ul>
                         </div>
-                    </div>
-                </nav>
+                     </div>
+                  </div>
+               </nav>
             </div>
-            
             <div class="col-6 my-1 py-1 py-lg-0">
-                <a href="{% url 'home' %}" class="nav-link text-center title-text">
-                    <h2 class="logo-font my-0">From Field to Frame</h2>
-                </a>
+               <a href="{% url 'home' %}" class="nav-link text-center title-text">
+                  <h2 class="logo-font my-0">From Field to Frame</h2>
+               </a>
             </div>
-            
-
             <!-- From Code Institute Boutique Ado walkthrough project -->
             <div class="col-3 my-1 py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link d-none d-lg-block" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu profile-dropdown border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
+               <ul class="list-inline list-unstyled text-right my-0">
+                  <li class="list-inline-item dropdown">
+                     <a class="text-black nav-link d-none d-lg-block" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="text-center">
+                           <div><i class="fas fa-user fa-lg"></i></div>
+                           <p class="my-0">My Account</p>
                         </div>
-                    </li>
-                      
-                        <li class="list-inline-item">
-                            <a class="{% if total %}text-white header-basket-icon font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
-                                <div class="text-center">
-                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                    <p class="my-0">
-                                        {% if total %}
-                                            £{{ total|floatformat:2 }}
-                                        {% else %}
-                                            £0.00
-                                        {% endif %}
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                    
-                </ul>
+                     </a>
+                     <div class="dropdown-menu profile-dropdown border-0" aria-labelledby="user-options">
+                        {% if request.user.is_authenticated %}
+                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                     </div>
+                  </li>
+                  <li class="list-inline-item">
+                     <a class="{% if total %}text-white header-basket-icon font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                        <div class="text-center">
+                           <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                           <p class="my-0">
+                              {% if total %}
+                              £{{ total|floatformat:2 }}
+                              {% else %}
+                              £0.00
+                              {% endif %}
+                           </p>
+                        </div>
+                     </a>
+                  </li>
+               </ul>
             </div>
-        </div>
-        
-    </header> 
-    
-
-    
-
-    {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
-    {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
-    {% block content %}
-
-    {% endblock %}
-
-    
-
-    {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-    </script>
-
-        
-    {% endblock %}
-
-    
-
-    <footer class="container-fluid fixed-bottom text-center mt-5">
-        
-            <a target="_blank" href="https://www.instagram.com/fromfieldtoframe/?hl=en-gb" class= "mx-2 social-footer-links"><i class="fab fa-instagram"></i></a>
-            <a target="_blank" href="https://twitter.com/" class= "mx-2 social-footer-links"><i class="fab fa-twitter"></i></a>
-            <a target="_blank" href="https://facebook.com/" class= "mx-2 social-footer-links"><i class="fab fa-facebook-f"></i></a>
-        
-    </footer>
-    
-  </body>
+         </div>
+      </header>
+      {% if messages %}
+      <div class="message-container">
+         {% for message in messages %}
+         {% with message.level as level %}
+         {% if level == 40 %}
+         {% include 'includes/toasts/toast_error.html' %}
+         {% elif level == 30 %}
+         {% include 'includes/toasts/toast_warning.html' %}
+         {% elif level == 25 %}
+         {% include 'includes/toasts/toast_success.html' %}
+         {% else %}
+         {% include 'includes/toasts/toast_info.html' %}
+         {% endif %}
+         {% endwith %}
+         {% endfor %}
+      </div>
+      {% endif %}
+      {% block page_header %}
+      {% endblock %}
+      {% block content %}
+      {% endblock %}
+      {% block postloadjs %}
+      <script type="text/javascript">
+         $('.toast').toast('show');
+      </script>
+      {% endblock %}
+      <footer class="container-fluid fixed-bottom text-center mt-5">
+         <a target="_blank" href="https://www.instagram.com/fromfieldtoframe/?hl=en-gb" class= "mx-2 social-footer-links"><i class="fab fa-instagram"></i></a>
+         <a target="_blank" href="https://twitter.com/" class= "mx-2 social-footer-links"><i class="fab fa-twitter"></i></a>
+         <a target="_blank" href="https://facebook.com/" class= "mx-2 social-footer-links"><i class="fab fa-facebook-f"></i></a>
+      </footer>
+   </body>
 </html>

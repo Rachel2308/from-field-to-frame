@@ -195,7 +195,7 @@ Throughout the project, testing was consistently undertaken on each feature that
 #### App - Blog
 
 * #### **Blog Home Page**
-    * Page renders well in all screen sizes
+    * Page renders well in all screen sizes. The cards end up different sizes due to the differing amount of content in them, however this was preferred over having a varied amount of white space which would have been necessary if the cards were to be all the same size.
     * If logged in user is a super user, Add new blog button and edit and delete links are displayed
     * Read more button takes user to the correct blog page
 

@@ -1,34 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
-{% block content %}
-
-<div class="row">
-    <div class="col text-center mt-3">
-        <h2 class="title-text page-title">Contact Us</h2>
-        <hr class="w-50 mb-1 title-hr">
-    </div>
+<div class="container header-container">
+   <div class="row">
+      <div class="col"></div>
+   </div>
 </div>
-
+{% endblock %}
+{% block content %}
+<div class="row">
+   <div class="col text-center mt-3">
+      <h2 class="title-text page-title">Contact Us</h2>
+      <hr class="w-50 mb-1 title-hr">
+   </div>
+</div>
 <h3 class="text-center contact-page-text">Please contact us if you have any questions or would like to request a quote</h3>
+<!--Contact form-->
 <div class="col-10 offset-1 col-md-8 offset-md-2">
-<form method="POST" action="{% url 'contact' %}" class="contact-form">
-{% csrf_token %}
-    {{ form | crispy }}
-    <div class="text-center">
-    <a href="{% url 'home' %}" class="cancel-btn">Cancel</a>
-    <button type="submit" class="account-action-btn">Submit</button>
-    </div>    
-    
-</form>
+   <form method="POST" action="{% url 'contact' %}" class="contact-form">
+      {% csrf_token %}
+      {{ form | crispy }}
+      <div class="text-center">
+         <a href="{% url 'home' %}" class="cancel-btn">Cancel</a>
+         <button type="submit" class="account-action-btn">Submit</button>
+      </div>
+   </form>
 </div>
 {% endblock %}
