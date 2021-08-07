@@ -46,6 +46,7 @@
     
     Once the card size was amended from h-100 to h-90 the issue was resolved.
   ---
+  
 *   **Issue**
     
     Sort function in Blogs home page caused account dropdown to show
@@ -64,6 +65,8 @@
     
     The placement of the "View larger image" link was causing the error. Moved inside the if statement, issue resolved.
 
+---
+
   *   **Issue**
     Increment and decrement buttons were making the quantity select button reder poorly on smaller screens
 
@@ -71,14 +74,23 @@
     
     Added code to CSS to remove the - + buttons on medium and smaller screen sizes. It was also felt that they were not necessary on smaller screen sizes 
 
+---
+
   *   **Issue**
     On firefox, the 3 footer links were not aligned. This was only an issue on firefox and no other browser.
 
     **Fix**
     
     A stray mt-3 tag had been left in the instagram link in the footer. This was only changing the margin on the firefoc and no other browser. Once this was removed they lined up on all browsers.
- 
 
+---
+
+  *   **Issue**
+    Error pages would not load
+
+    **Fix**
+    
+    I had made a mistake in the templates for the error pages and used the link <a class="error-link" href="{{ url ('home') }}">Go back to the home page</a> instead of <a class="error-link" href="{% url 'home' %}">Go back to the home page</a>
 
 
 
